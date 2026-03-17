@@ -91,12 +91,14 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/contact"
+            <a
+              href="https://wa.me/919014288588?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20services."
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-4 px-6 py-2.5 text-[13px] font-heading font-semibold tracking-wide bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors"
             >
               ENQUIRE NOW
-            </Link>
+            </a>
           </nav>
 
           {/* Mobile toggle */}
@@ -143,13 +145,15 @@ const Navbar = () => {
                   </motion.div>
                 ))}
                 <motion.div variants={itemVariants}>
-                  <Link
-                    to="/contact"
+                  <a
+                    href="https://wa.me/919014288588?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20services."
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
                     className="block mx-4 mt-2 px-6 py-3 text-sm text-center font-heading font-semibold bg-primary text-primary-foreground rounded"
                   >
                     ENQUIRE NOW
-                  </Link>
+                  </a>
                 </motion.div>
               </div>
             </motion.nav>
