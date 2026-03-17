@@ -15,12 +15,7 @@ const standards = [
 const QualityPage = () => (
   <main>
     <PageSEO title="Quality Assurance" description="Cure Tech Pharma's quality assurance standards – stringent testing, batch traceability, temperature-controlled storage, and certified pharmaceutical products." path="/quality" />
-    <section className="bg-secondary py-14 md:py-20 text-center">
-      <div className="container mx-auto px-5">
-        <h1 className="text-3xl md:text-5xl font-heading font-bold text-secondary-foreground">Quality & Compliance</h1>
-        <p className="text-secondary-foreground/60 mt-3 text-sm md:text-base">Home / Quality & Compliance</p>
-      </div>
-    </section>
+    <PageHero title="Quality & Compliance" subtitle="Home / Quality & Compliance" />
 
     <section className="py-12 md:py-20">
       <div className="container mx-auto px-5 md:px-4 grid lg:grid-cols-2 gap-8 md:gap-14 items-center">

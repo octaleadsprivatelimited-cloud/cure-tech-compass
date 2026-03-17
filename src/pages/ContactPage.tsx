@@ -34,12 +34,7 @@ const ContactPage = () => {
   return (
     <main>
       <PageSEO title="Contact Us" description="Get in touch with Cure Tech Pharma for wholesale pharmaceutical inquiries, distribution partnerships, and product information. Call +91 9014288588." path="/contact" />
-      <section className="bg-secondary py-14 md:py-20 text-center">
-        <div className="container mx-auto px-5">
-          <h1 className="text-3xl md:text-5xl font-heading font-bold text-secondary-foreground">Contact Us</h1>
-          <p className="text-secondary-foreground/60 mt-3 text-sm md:text-base">Home / Contact Us</p>
-        </div>
-      </section>
+      <PageHero title="Contact Us" subtitle="Home / Contact Us" />
 
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-5 md:px-4 grid lg:grid-cols-5 gap-8 md:gap-12">

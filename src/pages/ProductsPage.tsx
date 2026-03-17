@@ -80,15 +80,7 @@ const ProductsPage = () => {
   return (
     <main>
       <PageSEO title="Products" description="Browse 500+ quality pharmaceutical products from Cure Tech Pharma. General medicines, antibiotics, calcium supplements, gastro range and more." path="/products" />
-      {/* Hero Banner */}
-      <section className="bg-secondary py-14 md:py-20 text-center">
-        <div className="container mx-auto px-5">
-          <h1 className="text-3xl md:text-5xl font-heading font-bold text-secondary-foreground">Our Products</h1>
-          <p className="text-secondary-foreground/60 mt-3 text-sm md:text-base">
-            Browse our complete range of pharmaceutical products
-          </p>
-        </div>
-      </section>
+      <PageHero title="Our Products" subtitle="Browse our complete range of pharmaceutical products" />
 
       <section className="py-8 md:py-14">
         <div className="container mx-auto px-4">
