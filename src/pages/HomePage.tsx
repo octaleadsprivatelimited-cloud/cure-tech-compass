@@ -3,6 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Shield, Truck, Users, Package, ArrowRight, Clock, TrendingUp, Award, Headphones } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroMobile from "@/assets/hero-mobile.jpg";
 import aboutTeam from "@/assets/about-team.jpg";
 import whyChoosePharma from "@/assets/why-choose-pharma.jpg";
 
