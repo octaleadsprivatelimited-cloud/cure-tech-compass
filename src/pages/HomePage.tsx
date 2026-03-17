@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
-import { Shield, Truck, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package, ArrowRight, Clock, TrendingUp, Award, Headphones } from "lucide-react";
+import { Shield, Truck, Users, Package, ArrowRight, Clock, TrendingUp, Award, Headphones } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import aboutTeam from "@/assets/about-team.jpg";
 import whyChoosePharma from "@/assets/why-choose-pharma.jpg";
+
+import inspan40 from "@/assets/products/inspan-40.jpg";
+import calcifastXt from "@/assets/products/calcifast-xt.jpg";
+import inspanDsr from "@/assets/products/inspan-dsr.jpg";
+import clavorid625 from "@/assets/products/clavorid-625.jpg";
+import cetriwise10 from "@/assets/products/cetriwise-10.jpg";
+import parasync650 from "@/assets/products/parasync-650.jpg";
 
 const services = [
   { icon: Truck, title: "Wholesale Distribution", desc: "Bulk pharmaceutical supply across all Indian states with reliable logistics." },
@@ -14,12 +21,12 @@ const services = [
 ];
 
 const categories = [
-  { icon: Pill, name: "Tablets", desc: "Wide range of tablet formulations across therapeutic segments." },
-  { icon: Heart, name: "Capsules", desc: "Soft and hard gelatin capsules from trusted manufacturers." },
-  { icon: FlaskConical, name: "Syrups", desc: "Pharmaceutical syrups and suspensions for all age groups." },
-  { icon: Syringe, name: "Injections", desc: "Injectable formulations under strict cold chain standards." },
-  { icon: Leaf, name: "Nutraceuticals", desc: "Health supplements, vitamins, and nutritional products." },
-  { icon: Shield, name: "Antibiotics", desc: "Comprehensive antibiotic formulations from licensed sources." },
+  { name: "INSPAN-40", desc: "Pantoprazole 40mg", img: inspan40 },
+  { name: "PARASYNC-650", desc: "Paracetamol 650mg", img: parasync650 },
+  { name: "CALCIFAST-XT", desc: "Calcium + Vitamin D3", img: calcifastXt },
+  { name: "INSPAN-DSR", desc: "Pantoprazole + Domperidone SR", img: inspanDsr },
+  { name: "CLAVORID-625", desc: "Amoxycillin + Clavulanic Acid", img: clavorid625 },
+  { name: "CETRIWISE-10", desc: "Cetirizine 10mg", img: cetriwise10 },
 ];
 
 const whyUsFeatures = [
@@ -100,8 +107,13 @@ const HomePage = () => (
                 to="/products"
                 className="group bg-background rounded overflow-hidden shadow-sm hover:shadow-lg transition-shadow block"
               >
-                <div className="h-28 md:h-44 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors">
-                  <c.icon className="h-10 w-10 md:h-16 md:w-16 text-primary/25 group-hover:text-primary/40 transition-colors" />
+                <div className="h-32 md:h-48 bg-muted/30 flex items-center justify-center p-3 overflow-hidden">
+                  <img
+                    src={c.img}
+                    alt={c.name}
+                    className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="p-3 md:p-5">
                   <h3 className="text-sm md:text-lg font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{c.name}</h3>
