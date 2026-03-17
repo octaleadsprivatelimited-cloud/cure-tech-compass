@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SectionHeading from "@/components/SectionHeading";
+import ScrollAnimate from "@/components/ScrollAnimate";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
@@ -30,57 +31,57 @@ const ContactPage = () => {
 
   return (
     <main>
-      <section className="bg-secondary py-20 text-center">
-        <div className="container mx-auto">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-secondary-foreground">Contact Us</h1>
-          <p className="text-secondary-foreground/60 mt-3">Home / Contact Us</p>
+      <section className="bg-secondary py-14 md:py-20 text-center">
+        <div className="container mx-auto px-5">
+          <h1 className="text-3xl md:text-5xl font-heading font-bold text-secondary-foreground">Contact Us</h1>
+          <p className="text-secondary-foreground/60 mt-3 text-sm md:text-base">Home / Contact Us</p>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container mx-auto grid lg:grid-cols-5 gap-12">
-          {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
-            <SectionHeading title="Get In" highlight="Touch" center={false} />
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-5 md:px-4 grid lg:grid-cols-5 gap-8 md:gap-12">
+          <ScrollAnimate>
+            <div className="lg:col-span-2 space-y-5 md:space-y-6">
+              <SectionHeading title="Get In" highlight="Touch" center={false} />
 
-            {[
-              { icon: Phone, label: "Phone / WhatsApp", value: "+91 9014288588", href: "tel:+919014288588" },
-              { icon: Mail, label: "Email", value: "info@curetechpharma.in", href: "mailto:info@curetechpharma.in" },
-              { icon: MapPin, label: "Address", value: "H.No: 7-1-211/32, 3rd Floor, D.K Road, Ameerpet, Opp. Sonubhai Ammavari Temple, Hyderabad – 500016" },
-            ].map((item) => (
-              <div key={item.label} className="flex gap-4">
-                <div className="w-11 h-11 rounded bg-primary/10 flex items-center justify-center shrink-0">
-                  <item.icon className="h-5 w-5 text-primary" />
+              {[
+                { icon: Phone, label: "Phone / WhatsApp", value: "+91 9014288588", href: "tel:+919014288588" },
+                { icon: Mail, label: "Email", value: "info@curetechpharma.in", href: "mailto:info@curetechpharma.in" },
+                { icon: MapPin, label: "Address", value: "H.No: 7-1-211/32, 3rd Floor, D.K Road, Ameerpet, Opp. Sonubhai Ammavari Temple, Hyderabad – 500016" },
+              ].map((item) => (
+                <div key={item.label} className="flex gap-4">
+                  <div className="w-11 h-11 rounded bg-primary/10 flex items-center justify-center shrink-0">
+                    <item.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">{item.label}</div>
+                    {item.href ? (
+                      <a href={item.href} className="text-foreground text-sm font-medium hover:text-primary transition">{item.value}</a>
+                    ) : (
+                      <p className="text-foreground text-sm font-medium">{item.value}</p>
+                    )}
+                  </div>
                 </div>
+              ))}
+
+              <a
+                href="https://wa.me/919014288588"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 bg-accent/10 rounded border border-accent/20 hover:bg-accent/20 transition"
+              >
+                <MessageCircle className="h-7 w-7 text-accent" />
                 <div>
-                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">{item.label}</div>
-                  {item.href ? (
-                    <a href={item.href} className="text-foreground text-sm font-medium hover:text-primary transition">{item.value}</a>
-                  ) : (
-                    <p className="text-foreground text-sm font-medium">{item.value}</p>
-                  )}
+                  <div className="font-heading font-semibold text-sm text-foreground">Chat on WhatsApp</div>
+                  <div className="text-xs text-muted-foreground">Quick response guaranteed</div>
                 </div>
-              </div>
-            ))}
+              </a>
+            </div>
+          </ScrollAnimate>
 
-            <a
-              href="https://wa.me/919014288588"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 bg-accent/10 rounded border border-accent/20 hover:bg-accent/20 transition"
-            >
-              <MessageCircle className="h-7 w-7 text-accent" />
-              <div>
-                <div className="font-heading font-semibold text-sm text-foreground">Chat on WhatsApp</div>
-                <div className="text-xs text-muted-foreground">Quick response guaranteed</div>
-              </div>
-            </a>
-          </div>
-
-          {/* Form */}
-          <div className="lg:col-span-3">
-            <div className="bg-section-alt p-8 rounded">
-              <h3 className="text-xl font-heading font-bold text-foreground mb-6">Send Us a Message</h3>
+          <ScrollAnimate delay={200} className="lg:col-span-3">
+            <div className="bg-section-alt p-6 md:p-8 rounded">
+              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mb-5 md:mb-6">Send Us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <input className={inputClass} placeholder="Your Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
@@ -96,23 +97,24 @@ const ContactPage = () => {
                 </button>
               </form>
             </div>
-          </div>
+          </ScrollAnimate>
         </div>
       </section>
 
-      {/* Map */}
-      <section className="h-80">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7!2d78.4487!3d17.4375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI2JzE1LjAiTiA3OMKwMjYnNTUuMyJF!5e0!3m2!1sen!2sin!4v1234567890"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Cure Tech Pharma Location"
-        />
-      </section>
+      <ScrollAnimate>
+        <section className="h-60 md:h-80">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7!2d78.4487!3d17.4375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI2JzE1LjAiTiA3OMKwMjYnNTUuMyJF!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Cure Tech Pharma Location"
+          />
+        </section>
+      </ScrollAnimate>
     </main>
   );
 };
