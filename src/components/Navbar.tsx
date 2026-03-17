@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, MapPin, Linkedin } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
@@ -11,6 +12,21 @@ const navLinks = [
   { label: "QUALITY", path: "/quality" },
   { label: "CONTACT US", path: "/contact" },
 ];
+
+const menuVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] as const, staggerChildren: 0.06 },
+  },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.2 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] as const } },
+};
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -84,40 +100,62 @@ const Navbar = () => {
           </nav>
 
           {/* Mobile toggle */}
-          <button className="lg:hidden p-2" onClick={() => setOpen(!open)}>
+          <button className="lg:hidden p-2 z-50" onClick={() => setOpen(!open)}>
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-
-        {/* Mobile menu */}
-        {open && (
-          <div className="lg:hidden bg-background border-t border-border animate-fade-in max-h-[calc(100vh-4rem)] overflow-y-auto">
-            <nav className="flex flex-col p-4 gap-1 pb-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setOpen(false)}
-                  className={`px-4 py-3 text-sm font-heading font-semibold tracking-wide transition-colors ${
-                    location.pathname === link.path
-                      ? "text-primary bg-muted"
-                      : "text-foreground hover:text-primary hover:bg-muted"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                to="/contact"
-                onClick={() => setOpen(false)}
-                className="mx-4 mt-2 px-6 py-3 text-sm text-center font-heading font-semibold bg-primary text-primary-foreground rounded"
-              >
-                ENQUIRE NOW
-              </Link>
-            </nav>
-          </div>
-        )}
       </header>
+
+      {/* Mobile menu - absolute overlay */}
+      <AnimatePresence>
+        {open && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-foreground/20 backdrop-blur-sm lg:hidden"
+              onClick={() => setOpen(false)}
+            />
+            {/* Menu panel */}
+            <motion.nav
+              variants={menuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="fixed top-16 left-0 right-0 z-40 bg-background border-b border-border shadow-lg lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
+            >
+              <div className="flex flex-col p-4 gap-1 pb-8">
+                {navLinks.map((link) => (
+                  <motion.div key={link.path} variants={itemVariants}>
+                    <Link
+                      to={link.path}
+                      onClick={() => setOpen(false)}
+                      className={`block px-4 py-3 text-sm font-heading font-semibold tracking-wide rounded transition-colors ${
+                        location.pathname === link.path
+                          ? "text-primary bg-muted"
+                          : "text-foreground hover:text-primary hover:bg-muted"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div variants={itemVariants}>
+                  <Link
+                    to="/contact"
+                    onClick={() => setOpen(false)}
+                    className="block mx-4 mt-2 px-6 py-3 text-sm text-center font-heading font-semibold bg-primary text-primary-foreground rounded"
+                  >
+                    ENQUIRE NOW
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.nav>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };
