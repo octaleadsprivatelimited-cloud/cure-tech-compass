@@ -123,6 +123,14 @@ const HomePage = () => (
             </ScrollAnimate>
           ))}
         </div>
+        <div className="text-center mt-8 md:mt-10">
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-3.5 bg-primary text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary/90 transition-colors"
+          >
+            View All Products <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
 
