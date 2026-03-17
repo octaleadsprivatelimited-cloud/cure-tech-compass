@@ -1,7 +1,24 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin, Facebook, Twitter, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import pharmaBg from "@/assets/footer-pharma-bg.png";
+
+const CollapsibleSection = ({ title, children }: { title: string; children: React.ReactNode }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="md:hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center justify-between w-full text-base font-heading font-semibold py-3 border-b border-border"
+      >
+        {title}
+        <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && <div className="py-3">{children}</div>}
+    </div>
+  );
+};
 
 const Footer = () => (
   <footer className="bg-background text-foreground relative overflow-hidden">
@@ -11,9 +28,9 @@ const Footer = () => (
     </div>
 
     <div className="container mx-auto px-4 py-14 relative z-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-10 gap-y-0 md:gap-y-10">
         {/* Company */}
-        <div>
+        <div className="mb-6 md:mb-0">
           <div className="flex items-center gap-3 mb-4">
             <img src={logo} alt="Cure Tech Pharma" className="h-14 w-14 rounded-full shadow-md ring-2 ring-primary/20 p-0.5" />
             <h3 className="text-xl font-heading font-extrabold tracking-tight">
@@ -33,15 +50,25 @@ const Footer = () => (
           </div>
         </div>
 
-        {/* Quick Links */}
+        {/* Quick Links - collapsible on mobile */}
         <div>
-          <h4 className="text-base font-heading font-semibold mb-4">Quick Links</h4>
-          <ul className="space-y-2.5 text-sm opacity-75">
-            {["Home|/", "About Us|/about", "Products|/products", "Distribution|/distribution", "Quality|/quality", "Contact|/contact"].map((l) => {
-              const [label, path] = l.split("|");
-              return <li key={path}><Link to={path} className="hover:opacity-100 hover:underline transition">{label}</Link></li>;
-            })}
-          </ul>
+          <CollapsibleSection title="Quick Links">
+            <ul className="space-y-2.5 text-sm opacity-75">
+              {["Home|/", "About Us|/about", "Products|/products", "Distribution|/distribution", "Quality|/quality", "Contact|/contact"].map((l) => {
+                const [label, path] = l.split("|");
+                return <li key={path}><Link to={path} className="hover:opacity-100 hover:underline transition">{label}</Link></li>;
+              })}
+            </ul>
+          </CollapsibleSection>
+          <div className="hidden md:block">
+            <h4 className="text-base font-heading font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2.5 text-sm opacity-75">
+              {["Home|/", "About Us|/about", "Products|/products", "Distribution|/distribution", "Quality|/quality", "Contact|/contact"].map((l) => {
+                const [label, path] = l.split("|");
+                return <li key={path}><Link to={path} className="hover:opacity-100 hover:underline transition">{label}</Link></li>;
+              })}
+            </ul>
+          </div>
         </div>
 
         {/* Contact */}
@@ -63,8 +90,8 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Hours */}
-        <div>
+        {/* Hours - hidden on mobile */}
+        <div className="hidden md:block">
           <h4 className="text-base font-heading font-semibold mb-4">Business Hours</h4>
           <ul className="space-y-2 text-sm opacity-75">
             <li>Monday – Saturday</li>
