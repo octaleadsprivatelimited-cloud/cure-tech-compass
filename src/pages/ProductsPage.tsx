@@ -152,37 +152,45 @@ const ProductsPage = () => {
               </button>
             </div>
           ) : gridView ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
               {filtered.map((p, i) => (
                 <ScrollAnimate key={p.name} delay={i * 40}>
-                  <div className="group bg-background border border-border rounded-xl overflow-hidden hover:shadow-xl hover:border-primary/20 transition-all duration-300">
+                  <div className="group bg-background rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden">
                     {/* Image */}
-                    <div className="relative aspect-square bg-muted/20 flex items-center justify-center p-4 overflow-hidden">
+                    <div className="relative aspect-[4/5] bg-section-alt flex items-center justify-center p-6 md:p-8 overflow-hidden">
                       <img
                         src={p.img}
                         alt={p.name}
-                        className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500"
+                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
-                      {/* Quick action overlay */}
-                      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
-                      <span className="absolute top-2 left-2 px-2 py-0.5 text-[9px] md:text-[10px] font-heading font-semibold bg-accent text-accent-foreground rounded-full">
-                        {p.category}
-                      </span>
+                      {/* Hover overlay with button */}
+                      <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <a
+                          href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-5 py-2 text-xs font-heading font-semibold bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-colors"
+                        >
+                          Enquire Now
+                        </a>
+                      </div>
                     </div>
                     {/* Info */}
-                    <div className="p-3 md:p-4">
-                      <h4 className="text-xs md:text-sm font-heading font-bold text-foreground leading-tight mb-1 group-hover:text-primary transition-colors">
+                    <div className="p-3 md:p-4 text-center">
+                      <p className="text-[9px] md:text-[10px] text-muted-foreground font-heading uppercase tracking-wider mb-1">{p.category}</p>
+                      <h4 className="text-xs md:text-sm font-heading font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
                         {p.name}
                       </h4>
-                      <p className="text-[10px] md:text-xs text-muted-foreground leading-snug mb-3 line-clamp-2">
+                      <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5">
                         {p.desc}
                       </p>
+                      {/* Mobile-only button */}
                       <a
                         href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center w-full px-3 py-2 text-[10px] md:text-xs font-heading font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                        className="md:hidden inline-block mt-2.5 px-4 py-1.5 text-[10px] font-heading font-semibold bg-primary text-primary-foreground rounded-full"
                       >
                         Enquire Now
                       </a>
