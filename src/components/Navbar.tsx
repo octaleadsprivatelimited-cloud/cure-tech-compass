@@ -126,21 +126,22 @@ const Navbar = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed top-16 left-0 right-0 z-40 bg-background border-b border-border shadow-lg lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
+              className="fixed top-16 left-0 right-0 z-40 bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-lg lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto"
             >
-              <div className="flex flex-col p-4 gap-1 pb-8">
+              <div className="flex flex-col px-6 py-5 gap-0">
                 {navLinks.map((link) => (
                   <motion.div key={link.path} variants={itemVariants}>
                     <Link
                       to={link.path}
                       onClick={() => setOpen(false)}
-                      className={`block px-4 py-3 text-sm font-heading font-semibold tracking-wide rounded transition-colors ${
+                      className={`block py-3.5 text-[17px] font-normal tracking-[-0.01em] border-b border-border/40 transition-colors ${
                         location.pathname === link.path
-                          ? "text-primary bg-muted"
-                          : "text-foreground hover:text-primary hover:bg-muted"
+                          ? "text-primary"
+                          : "text-foreground/80 hover:text-foreground"
                       }`}
+                      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif" }}
                     >
-                      {link.label}
+                      {link.label.charAt(0) + link.label.slice(1).toLowerCase()}
                     </Link>
                   </motion.div>
                 ))}
@@ -150,9 +151,10 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
-                    className="block mx-4 mt-2 px-6 py-3 text-sm text-center font-heading font-semibold bg-primary text-primary-foreground rounded"
+                    className="block mt-4 px-6 py-3 text-[15px] text-center font-medium bg-primary text-primary-foreground rounded-full"
+                    style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif" }}
                   >
-                    ENQUIRE NOW
+                    Enquire Now
                   </a>
                 </motion.div>
               </div>
