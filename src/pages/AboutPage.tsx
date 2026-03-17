@@ -2,10 +2,9 @@ import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Target, Eye, Award, Shield, Users, Heart, Linkedin, Mail } from "lucide-react";
 import aboutTeam from "@/assets/about-team.jpg";
-import team1 from "@/assets/team-member-1.jpg";
-import team2 from "@/assets/team-member-2.jpg";
-import team3 from "@/assets/team-member-3.jpg";
-import team4 from "@/assets/team-member-4.jpg";
+import teamSrinivas from "@/assets/team-srinivas.jpg";
+import teamRamana from "@/assets/team-ramana.jpg";
+import teamPhani from "@/assets/team-phani.jpg";
 
 const values = [
   { icon: Award, title: "Quality", desc: "Every product meets the highest pharmaceutical standards." },
@@ -15,10 +14,9 @@ const values = [
 ];
 
 const teamMembers = [
-  { name: "Rajesh Kumar", role: "Founder & CEO", image: team1, desc: "20+ years in pharmaceutical distribution and business strategy." },
-  { name: "Vikram Reddy", role: "Operations Head", image: team2, desc: "Expert in supply chain management and logistics optimization." },
-  { name: "Priya Sharma", role: "Quality Director", image: team3, desc: "Ensures every product meets rigorous quality and safety standards." },
-  { name: "Arjun Patel", role: "Sales Head", image: team4, desc: "Drives partnerships and market expansion across India." },
+  { name: "Dr. Srinivas K", role: "MBBS", image: teamSrinivas, desc: "Experienced medical professional guiding pharmaceutical quality and operations." },
+  { name: "Dr. Ramana Pujari", role: "MBBS, DLO", image: teamRamana, desc: "Specialist in ENT with deep expertise in pharmaceutical healthcare." },
+  { name: "Dr. Phani Kumar", role: "MS ENT", image: teamPhani, desc: "Senior ENT surgeon contributing to healthcare product standards and advisory." },
 ];
 
 const AboutPage = () => (
@@ -104,7 +102,7 @@ const AboutPage = () => (
         <ScrollAnimate>
           <SectionHeading title="Meet Our" highlight="Team" />
         </ScrollAnimate>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
           {teamMembers.map((member, i) => (
             <ScrollAnimate key={member.name} delay={i * 120}>
               <div className="group bg-background rounded-lg overflow-hidden border border-border hover:shadow-lg transition-all h-full">
