@@ -1,13 +1,24 @@
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
-import { Target, Eye, Award, Shield, Users, Heart } from "lucide-react";
+import { Target, Eye, Award, Shield, Users, Heart, Linkedin, Mail } from "lucide-react";
 import aboutTeam from "@/assets/about-team.jpg";
+import team1 from "@/assets/team-member-1.jpg";
+import team2 from "@/assets/team-member-2.jpg";
+import team3 from "@/assets/team-member-3.jpg";
+import team4 from "@/assets/team-member-4.jpg";
 
 const values = [
   { icon: Award, title: "Quality", desc: "Every product meets the highest pharmaceutical standards." },
   { icon: Heart, title: "Trust", desc: "Building lasting relationships with transparency and reliability." },
   { icon: Shield, title: "Compliance", desc: "Strict adherence to all pharmaceutical regulations." },
   { icon: Users, title: "Customer Satisfaction", desc: "Dedicated to exceeding expectations at every touchpoint." },
+];
+
+const teamMembers = [
+  { name: "Rajesh Kumar", role: "Founder & CEO", image: team1, desc: "20+ years in pharmaceutical distribution and business strategy." },
+  { name: "Vikram Reddy", role: "Operations Head", image: team2, desc: "Expert in supply chain management and logistics optimization." },
+  { name: "Priya Sharma", role: "Quality Director", image: team3, desc: "Ensures every product meets rigorous quality and safety standards." },
+  { name: "Arjun Patel", role: "Sales Head", image: team4, desc: "Drives partnerships and market expansion across India." },
 ];
 
 const AboutPage = () => (
@@ -81,6 +92,42 @@ const AboutPage = () => (
                 </div>
                 <h3 className="font-heading font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">{v.title}</h3>
                 <p className="text-xs md:text-sm text-muted-foreground">{v.desc}</p>
+              </div>
+            </ScrollAnimate>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="py-12 md:py-20 bg-section-alt">
+      <div className="container mx-auto px-5 md:px-4">
+        <ScrollAnimate>
+          <SectionHeading title="Meet Our" highlight="Team" />
+        </ScrollAnimate>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {teamMembers.map((member, i) => (
+            <ScrollAnimate key={member.name} delay={i * 120}>
+              <div className="group bg-background rounded-lg overflow-hidden border border-border hover:shadow-lg transition-all h-full">
+                <div className="overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-40 md:h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-3 md:p-5 text-center">
+                  <h3 className="font-heading font-bold text-foreground text-sm md:text-lg">{member.name}</h3>
+                  <p className="text-primary text-xs md:text-sm font-semibold mb-1 md:mb-2">{member.role}</p>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed hidden md:block">{member.desc}</p>
+                  <div className="flex justify-center gap-3 mt-3">
+                    <a href="#" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
+                      <Linkedin className="h-3.5 w-3.5" />
+                    </a>
+                    <a href="#" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
+                      <Mail className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </ScrollAnimate>
           ))}
