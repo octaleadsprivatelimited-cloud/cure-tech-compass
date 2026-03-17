@@ -1,14 +1,23 @@
 interface SectionHeadingProps {
   title: string;
+  highlight?: string;
   subtitle?: string;
   center?: boolean;
+  light?: boolean;
 }
 
-const SectionHeading = ({ title, subtitle, center = true }: SectionHeadingProps) => (
-  <div className={`mb-12 ${center ? "text-center" : ""}`}>
-    <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">{title}</h2>
-    <div className="w-20 h-1 bg-primary rounded-full mt-4 mb-4 mx-auto" style={center ? {} : { marginLeft: 0 }} />
-    {subtitle && <p className="text-muted-foreground max-w-2xl mx-auto">{subtitle}</p>}
+const SectionHeading = ({ title, highlight, subtitle, center = true, light = false }: SectionHeadingProps) => (
+  <div className={`mb-10 ${center ? "text-center" : ""}`}>
+    {subtitle && (
+      <span className={`text-sm font-heading font-semibold uppercase tracking-widest ${light ? "text-primary-foreground/60" : "text-primary"}`}>
+        {subtitle}
+      </span>
+    )}
+    <h2 className={`text-3xl md:text-4xl font-heading font-bold mt-2 ${light ? "text-primary-foreground" : "text-foreground"}`}>
+      {title}{" "}
+      {highlight && <span className="text-primary">{highlight}</span>}
+    </h2>
+    <div className={`w-16 h-1 rounded-full mt-4 ${center ? "mx-auto" : ""} ${light ? "bg-primary-foreground/40" : "bg-primary"}`} />
   </div>
 );
 

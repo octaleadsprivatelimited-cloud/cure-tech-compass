@@ -1,8 +1,5 @@
 import { useState } from "react";
 import SectionHeading from "@/components/SectionHeading";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
@@ -29,72 +26,82 @@ const ContactPage = () => {
     setForm({ name: "", phone: "", email: "", message: "" });
   };
 
+  const inputClass = "w-full px-4 py-3 border border-border rounded bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition placeholder:text-muted-foreground";
+
   return (
-    <main className="pt-20">
-      <section className="relative py-24 bg-hero-gradient">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground mb-4">Contact Us</h1>
-          <p className="text-primary-foreground/80 max-w-xl">Get in touch for wholesale inquiries and partnership opportunities.</p>
+    <main>
+      <section className="bg-secondary py-20 text-center">
+        <div className="container mx-auto">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-secondary-foreground">Contact Us</h1>
+          <p className="text-secondary-foreground/60 mt-3">Home / Contact Us</p>
         </div>
       </section>
 
       <section className="py-20">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12">
-          {/* Form */}
-          <div>
-            <SectionHeading title="Send Us a Message" center={false} />
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <Input placeholder="Your Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-              <Input placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
-              <Input placeholder="Email Address" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-              <Textarea placeholder="Your Message" rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-              <Button type="submit" size="lg" className="w-full sm:w-auto px-10">Send Message</Button>
-            </form>
-          </div>
+        <div className="container mx-auto grid lg:grid-cols-5 gap-12">
+          {/* Contact Info */}
+          <div className="lg:col-span-2 space-y-6">
+            <SectionHeading title="Get In" highlight="Touch" center={false} />
 
-          {/* Info */}
-          <div className="space-y-8">
-            <SectionHeading title="Contact Information" center={false} />
-            <div className="space-y-6">
-              {[
-                { icon: Phone, label: "Phone / WhatsApp", value: "+91 9014288588", href: "tel:+919014288588" },
-                { icon: Mail, label: "Email", value: "info@curetechpharma.com", href: "mailto:info@curetechpharma.com" },
-                { icon: MapPin, label: "Address", value: "H.No: 7-1-211/32, 3rd Floor, D.K Road, Ameerpet, Opp. Sonubhai Ammavari Temple, Hyderabad – 500016" },
-              ].map((item) => (
-                <div key={item.label} className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center shrink-0">
-                    <item.icon className="h-5 w-5 text-accent-foreground" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-muted-foreground">{item.label}</div>
-                    {item.href ? (
-                      <a href={item.href} className="text-foreground font-semibold hover:text-primary transition-colors">{item.value}</a>
-                    ) : (
-                      <p className="text-foreground font-semibold text-sm">{item.value}</p>
-                    )}
-                  </div>
+            {[
+              { icon: Phone, label: "Phone / WhatsApp", value: "+91 9014288588", href: "tel:+919014288588" },
+              { icon: Mail, label: "Email", value: "info@curetechpharma.com", href: "mailto:info@curetechpharma.com" },
+              { icon: MapPin, label: "Address", value: "H.No: 7-1-211/32, 3rd Floor, D.K Road, Ameerpet, Opp. Sonubhai Ammavari Temple, Hyderabad – 500016" },
+            ].map((item) => (
+              <div key={item.label} className="flex gap-4">
+                <div className="w-11 h-11 rounded bg-primary/10 flex items-center justify-center shrink-0">
+                  <item.icon className="h-5 w-5 text-primary" />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">{item.label}</div>
+                  {item.href ? (
+                    <a href={item.href} className="text-foreground text-sm font-medium hover:text-primary transition">{item.value}</a>
+                  ) : (
+                    <p className="text-foreground text-sm font-medium">{item.value}</p>
+                  )}
+                </div>
+              </div>
+            ))}
 
             <a
               href="https://wa.me/919014288588"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-5 bg-secondary/10 rounded-xl border border-secondary/20 hover:bg-secondary/20 transition-colors"
+              className="flex items-center gap-3 p-4 bg-accent/10 rounded border border-accent/20 hover:bg-accent/20 transition"
             >
-              <MessageCircle className="h-8 w-8 text-secondary" />
+              <MessageCircle className="h-7 w-7 text-accent" />
               <div>
-                <div className="font-semibold text-foreground">Chat on WhatsApp</div>
-                <div className="text-sm text-muted-foreground">Quick response guaranteed</div>
+                <div className="font-heading font-semibold text-sm text-foreground">Chat on WhatsApp</div>
+                <div className="text-xs text-muted-foreground">Quick response guaranteed</div>
               </div>
             </a>
+          </div>
+
+          {/* Form */}
+          <div className="lg:col-span-3">
+            <div className="bg-section-alt p-8 rounded">
+              <h3 className="text-xl font-heading font-bold text-foreground mb-6">Send Us a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <input className={inputClass} placeholder="Your Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+                  <input className={inputClass} placeholder="Phone Number *" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
+                </div>
+                <input className={inputClass} placeholder="Email Address *" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+                <textarea className={`${inputClass} resize-none`} rows={5} placeholder="Your Message *" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+                <button
+                  type="submit"
+                  className="px-10 py-3 bg-primary text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary/90 transition"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Map */}
-      <section className="h-96">
+      <section className="h-80">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7!2d78.4487!3d17.4375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI2JzE1LjAiTiA3OMKwMjYnNTUuMyJF!5e0!3m2!1sen!2sin!4v1234567890"
           width="100%"

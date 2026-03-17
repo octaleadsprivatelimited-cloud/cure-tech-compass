@@ -1,81 +1,109 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
-import { Shield, Truck, Award, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package } from "lucide-react";
+import { Shield, Truck, Award, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package, ArrowRight, CheckCircle2 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import aboutTeam from "@/assets/about-team.jpg";
 import indiaMap from "@/assets/india-map.png";
 
 const services = [
-  { icon: Truck, title: "Wholesale Distribution", desc: "Bulk pharmaceutical supply across all Indian states" },
-  { icon: Package, title: "Supply Chain", desc: "Reliable end-to-end logistics and cold chain management" },
-  { icon: Shield, title: "Quality Assurance", desc: "Stringent quality checks at every stage" },
-  { icon: Users, title: "Partner Network", desc: "Serving hospitals, clinics, and pharmacy chains" },
+  { icon: Truck, title: "Wholesale Distribution", desc: "Bulk pharmaceutical supply across all Indian states with reliable logistics." },
+  { icon: Package, title: "Supply Chain Management", desc: "End-to-end logistics and cold chain management for all product types." },
+  { icon: Shield, title: "Quality Assurance", desc: "Stringent quality checks and batch-level traceability at every stage." },
+  { icon: Users, title: "Partner Network", desc: "Serving hospitals, clinics, pharmacies and healthcare institutions." },
 ];
 
 const categories = [
-  { icon: Pill, name: "Tablets" },
-  { icon: Heart, name: "Capsules" },
-  { icon: FlaskConical, name: "Syrups" },
-  { icon: Syringe, name: "Injections" },
-  { icon: Leaf, name: "Nutraceuticals" },
-  { icon: Shield, name: "Antibiotics" },
+  { icon: Pill, name: "Tablets", desc: "Wide range of tablet formulations across therapeutic segments." },
+  { icon: Heart, name: "Capsules", desc: "Soft and hard gelatin capsules from trusted manufacturers." },
+  { icon: FlaskConical, name: "Syrups", desc: "Pharmaceutical syrups and suspensions for all age groups." },
+  { icon: Syringe, name: "Injections", desc: "Injectable formulations under strict cold chain standards." },
+  { icon: Leaf, name: "Nutraceuticals", desc: "Health supplements, vitamins, and nutritional products." },
+  { icon: Shield, name: "Antibiotics", desc: "Comprehensive antibiotic formulations from licensed sources." },
 ];
 
 const whyUs = [
-  { title: "Pan-India Network", desc: "Distribution coverage across all major cities and towns" },
-  { title: "Competitive Pricing", desc: "Best wholesale rates for pharmacies and hospitals" },
-  { title: "Quality Certified", desc: "All products sourced from licensed manufacturers" },
-  { title: "Timely Delivery", desc: "Efficient logistics ensuring on-time supply" },
+  "Pan-India distribution network covering 28+ states",
+  "Competitive wholesale pricing for bulk orders",
+  "Quality certified products from licensed manufacturers",
+  "Timely delivery with efficient logistics",
+  "Temperature-controlled storage and handling",
+  "Dedicated customer support team",
 ];
 
 const HomePage = () => (
   <main>
     {/* Hero */}
-    <section className="relative min-h-[90vh] flex items-center">
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-hero-gradient opacity-85" />
-      </div>
-      <div className="container mx-auto px-4 relative z-10 py-32">
-        <div className="max-w-2xl animate-fade-in-up">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary-foreground/15 text-primary-foreground text-sm font-medium mb-6 backdrop-blur-sm">
-            Pharmaceutical Distributor & Wholesale Supplier
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-tight mb-6">
-            Trusted Pharmaceutical Distributor Across India
-          </h1>
-          <p className="text-lg text-primary-foreground/85 mb-8 leading-relaxed">
-            Cure Tech Pharma provides reliable wholesale pharmaceutical distribution delivering quality medicines and healthcare products across India.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8">
-              <Link to="/contact">Contact Us</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm">
-              <Link to="/products">View Products</Link>
-            </Button>
-          </div>
+    <section className="relative h-[85vh] min-h-[550px] flex items-center justify-center overflow-hidden">
+      <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-hero-overlay" />
+      <div className="relative z-10 text-center px-4 max-w-3xl animate-fade-up">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight">
+          Trusted Pharmaceutical Distributor Across India
+        </h1>
+        <p className="text-base md:text-lg text-primary-foreground/75 mt-6 mb-10 leading-relaxed max-w-2xl mx-auto">
+          Cure Tech Pharma provides reliable wholesale pharmaceutical distribution delivering quality medicines and healthcare products across India.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary/90 transition-colors"
+          >
+            Know More <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-primary-foreground/30 text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary-foreground/10 transition-colors"
+          >
+            Contact Us
+          </Link>
         </div>
       </div>
     </section>
 
     {/* About Summary */}
-    <section className="py-20 bg-section-gradient">
-      <div className="container mx-auto px-4">
-        <SectionHeading
-          title="About Cure Tech Pharma"
-          subtitle="We are a leading pharmaceutical distributor headquartered in Hyderabad, committed to providing high-quality medicines and healthcare products to pharmacies, hospitals, and healthcare institutions across India."
-        />
-        <div className="grid md:grid-cols-3 gap-8 mt-8">
-          {[
-            { num: "500+", label: "Products Distributed" },
-            { num: "1000+", label: "Partner Pharmacies" },
-            { num: "28+", label: "States Covered" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center p-8 bg-card rounded-xl shadow-card">
-              <div className="text-4xl font-display font-bold text-primary mb-2">{stat.num}</div>
-              <div className="text-muted-foreground text-sm">{stat.label}</div>
-            </div>
+    <section className="py-20">
+      <div className="container mx-auto grid lg:grid-cols-2 gap-14 items-center">
+        <div className="rounded overflow-hidden">
+          <img src={aboutTeam} alt="Cure Tech Pharma team" className="w-full h-auto" />
+        </div>
+        <div>
+          <SectionHeading title="About" highlight="Cure Tech Pharma" center={false} />
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Cure Tech Pharma is a leading pharmaceutical distributor and wholesale supplier headquartered in Hyderabad, India. We bridge the gap between pharmaceutical manufacturers and healthcare providers across the nation.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Our extensive distribution network, coupled with stringent quality control measures, ensures that every product reaching our partners meets the highest standards of safety and efficacy.
+          </p>
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-primary hover:underline"
+          >
+            Read More <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+
+    {/* Products */}
+    <section className="py-20 bg-section-alt">
+      <div className="container mx-auto">
+        <SectionHeading subtitle="What We Offer" title="Products" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categories.map((c) => (
+            <Link
+              key={c.name}
+              to="/products"
+              className="group bg-background rounded overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+            >
+              <div className="h-44 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors">
+                <c.icon className="h-16 w-16 text-primary/25 group-hover:text-primary/40 transition-colors" />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{c.name}</h3>
+                <p className="text-sm text-muted-foreground mt-1">{c.desc}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -83,15 +111,15 @@ const HomePage = () => (
 
     {/* Services */}
     <section className="py-20">
-      <div className="container mx-auto px-4">
-        <SectionHeading title="Our Key Services" subtitle="Comprehensive pharmaceutical distribution solutions tailored for your business" />
+      <div className="container mx-auto">
+        <SectionHeading subtitle="Our Services" title="Key" highlight="Services" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
-            <div key={s.title} className="group p-8 bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
-              <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
-                <s.icon className="h-7 w-7 text-accent-foreground group-hover:text-primary-foreground transition-colors" />
+            <div key={s.title} className="p-6 text-center border border-border rounded hover:border-primary/30 hover:shadow-md transition-all group">
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
+                <s.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-foreground">{s.title}</h3>
+              <h3 className="font-heading font-semibold text-foreground mb-2">{s.title}</h3>
               <p className="text-sm text-muted-foreground">{s.desc}</p>
             </div>
           ))}
@@ -99,83 +127,71 @@ const HomePage = () => (
       </div>
     </section>
 
-    {/* Product Categories */}
-    <section className="py-20 bg-section-gradient">
-      <div className="container mx-auto px-4">
-        <SectionHeading title="Product Categories" subtitle="Wide range of pharmaceutical products for all healthcare needs" />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {categories.map((c) => (
-            <Link
-              key={c.name}
-              to="/products"
-              className="group flex flex-col items-center p-6 bg-card rounded-xl shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
-            >
-              <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-3 group-hover:bg-primary transition-colors">
-                <c.icon className="h-8 w-8 text-accent-foreground group-hover:text-primary-foreground transition-colors" />
-              </div>
-              <span className="text-sm font-medium text-foreground">{c.name}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-
     {/* Why Choose Us */}
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <SectionHeading title="Why Choose Us" subtitle="What sets Cure Tech Pharma apart from other distributors" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {whyUs.map((item, i) => (
-            <div key={item.title} className="relative p-8 bg-card rounded-xl shadow-card border-t-4 border-primary">
-              <span className="absolute top-4 right-4 text-5xl font-display font-bold text-muted/50">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
-              <p className="text-sm text-muted-foreground">{item.desc}</p>
-            </div>
-          ))}
+    <section className="py-20 bg-secondary text-secondary-foreground">
+      <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <SectionHeading title="Why Choose" highlight="Cure Tech Pharma?" center={false} light />
+          <ul className="space-y-4 mt-6">
+            {whyUs.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-secondary-foreground/85">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 mt-8 px-8 py-3 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition-colors"
+          >
+            Become a Partner <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <div className="flex justify-center">
+          <img src={indiaMap} alt="Distribution network across India" className="max-w-sm w-full opacity-80" />
         </div>
       </div>
     </section>
 
-    {/* Distribution Network */}
-    <section className="py-20 bg-hero-gradient">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground mb-6">
-              Distributor Network Across India
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 leading-relaxed">
-              Our extensive distribution network ensures timely delivery of pharmaceutical products to every corner of India. We partner with leading pharmacies, hospitals, and healthcare institutions nationwide.
-            </p>
-            <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-              <Link to="/distribution">Learn More</Link>
-            </Button>
+    {/* Stats */}
+    <section className="py-16">
+      <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { num: "500+", label: "Products" },
+          { num: "1000+", label: "Partner Pharmacies" },
+          { num: "28+", label: "States Covered" },
+          { num: "10+", label: "Years Experience" },
+        ].map((s) => (
+          <div key={s.label} className="text-center py-8 border border-border rounded">
+            <div className="text-3xl md:text-4xl font-heading font-bold text-primary">{s.num}</div>
+            <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
           </div>
-          <div className="flex justify-center">
-            <img src={indiaMap} alt="Distribution network across India" className="max-w-sm w-full animate-float" />
-          </div>
-        </div>
+        ))}
       </div>
     </section>
 
     {/* CTA */}
-    <section className="py-20 bg-section-gradient">
-      <div className="container mx-auto px-4 text-center">
-        <SectionHeading
-          title="Become a Distribution Partner"
-          subtitle="Join our growing network of pharmaceutical partners across India. Contact us today to discuss wholesale pricing and partnership opportunities."
-        />
+    <section className="py-16 bg-cta-gradient text-primary-foreground">
+      <div className="container mx-auto text-center">
+        <h2 className="text-2xl md:text-3xl font-heading font-bold">Ready to Partner With Us?</h2>
+        <p className="text-primary-foreground/70 mt-3 mb-8 max-w-lg mx-auto">
+          Contact us today to discuss wholesale pricing and distribution partnership opportunities.
+        </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Button asChild size="lg" className="px-10">
-            <Link to="/contact">Contact Us</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="px-10">
-            <a href="https://wa.me/919014288588" target="_blank" rel="noopener noreferrer">
-              WhatsApp Us
-            </a>
-          </Button>
+          <Link
+            to="/contact"
+            className="px-8 py-3 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition"
+          >
+            Contact Us
+          </Link>
+          <a
+            href="https://wa.me/919014288588"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 border-2 border-primary-foreground/30 text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary-foreground/10 transition"
+          >
+            WhatsApp Us
+          </a>
         </div>
       </div>
     </section>
