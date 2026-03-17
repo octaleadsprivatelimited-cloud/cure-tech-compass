@@ -1,4 +1,5 @@
 import PageSEO from "@/components/PageSEO";
+import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Truck, Building2, Heart, Package } from "lucide-react";
