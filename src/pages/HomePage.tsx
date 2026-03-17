@@ -129,27 +129,31 @@ const HomePage = () => (
     </section>
 
     {/* Why Choose Us */}
-    <section className="py-20 bg-secondary text-secondary-foreground">
-      <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <SectionHeading title="Why Choose" highlight="Cure Tech Pharma?" center={false} light />
-          <ul className="space-y-4 mt-6">
-            {whyUs.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-secondary-foreground/85">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 mt-8 px-8 py-3 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition-colors"
-          >
-            Become a Partner <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <div className="flex justify-center">
-          <img src={indiaMap} alt="Distribution network across India" className="max-w-sm w-full opacity-80" />
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      <img src={whyChooseBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-secondary/90" />
+      <div className="container mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <SectionHeading title="Why Choose" highlight="Cure Tech Pharma?" center={false} light />
+            <ul className="space-y-4 mt-6">
+              {whyUs.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                  <span className="text-secondary-foreground/85 text-sm md:text-base">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 mt-8 px-8 py-3 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition-colors"
+            >
+              Become a Partner <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="hidden lg:flex justify-center">
+            <img src={indiaMap} alt="Distribution network across India" className="max-w-xs w-full opacity-70" />
+          </div>
         </div>
       </div>
     </section>
