@@ -88,24 +88,24 @@ const HomePage = () => (
     </section>
 
     {/* Products */}
-    <section className="py-20 bg-section-alt">
-      <div className="container mx-auto">
+    <section className="py-12 md:py-20 bg-section-alt">
+      <div className="container mx-auto px-5 md:px-4">
         <ScrollAnimate>
           <SectionHeading subtitle="What We Offer" title="Products" />
         </ScrollAnimate>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {categories.map((c, i) => (
             <ScrollAnimate key={c.name} delay={i * 100}>
               <Link
                 to="/products"
                 className="group bg-background rounded overflow-hidden shadow-sm hover:shadow-lg transition-shadow block"
               >
-                <div className="h-44 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors">
-                  <c.icon className="h-16 w-16 text-primary/25 group-hover:text-primary/40 transition-colors" />
+                <div className="h-28 md:h-44 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors">
+                  <c.icon className="h-10 w-10 md:h-16 md:w-16 text-primary/25 group-hover:text-primary/40 transition-colors" />
                 </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{c.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{c.desc}</p>
+                <div className="p-3 md:p-5">
+                  <h3 className="text-sm md:text-lg font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{c.name}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1 line-clamp-2">{c.desc}</p>
                 </div>
               </Link>
             </ScrollAnimate>
