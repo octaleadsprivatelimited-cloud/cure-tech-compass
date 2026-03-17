@@ -41,7 +41,7 @@ const Footer = () => (
             </li>
             <li className="flex items-start gap-2.5">
               <Mail className="h-4 w-4 mt-0.5 shrink-0" />
-              <a href="mailto:info@curetechpharma.com">info@curetechpharma.com</a>
+              <a href="mailto:info@curetechpharma.in">info@curetechpharma.in</a>
             </li>
             <li className="flex items-start gap-2.5">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0" />

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
-import { Shield, Truck, Award, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package, ArrowRight, CheckCircle2 } from "lucide-react";
+import ScrollAnimate from "@/components/ScrollAnimate";
+import { Shield, Truck, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package, ArrowRight, CheckCircle2 } from "lucide-react";
 import whyChooseBg from "@/assets/why-choose-bg.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 import aboutTeam from "@/assets/about-team.jpg";
@@ -65,46 +65,53 @@ const HomePage = () => (
     {/* About Summary */}
     <section className="py-20">
       <div className="container mx-auto grid lg:grid-cols-2 gap-14 items-center">
-        <div className="rounded overflow-hidden">
-          <img src={aboutTeam} alt="Cure Tech Pharma team" className="w-full h-auto" />
-        </div>
-        <div>
-          <SectionHeading title="About" highlight="Cure Tech Pharma" center={false} />
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Cure Tech Pharma is a leading pharmaceutical distributor and wholesale supplier headquartered in Hyderabad, India. We bridge the gap between pharmaceutical manufacturers and healthcare providers across the nation.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            Our extensive distribution network, coupled with stringent quality control measures, ensures that every product reaching our partners meets the highest standards of safety and efficacy.
-          </p>
-          <Link
-            to="/about"
-            className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-primary hover:underline"
-          >
-            Read More <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
+        <ScrollAnimate>
+          <div className="rounded overflow-hidden">
+            <img src={aboutTeam} alt="Cure Tech Pharma team" className="w-full h-auto" />
+          </div>
+        </ScrollAnimate>
+        <ScrollAnimate delay={200}>
+          <div>
+            <SectionHeading title="About" highlight="Cure Tech Pharma" center={false} />
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Cure Tech Pharma is a leading pharmaceutical distributor and wholesale supplier headquartered in Hyderabad, India. We bridge the gap between pharmaceutical manufacturers and healthcare providers across the nation.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Our extensive distribution network, coupled with stringent quality control measures, ensures that every product reaching our partners meets the highest standards of safety and efficacy.
+            </p>
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-primary hover:underline"
+            >
+              Read More <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </ScrollAnimate>
       </div>
     </section>
 
     {/* Products */}
     <section className="py-20 bg-section-alt">
       <div className="container mx-auto">
-        <SectionHeading subtitle="What We Offer" title="Products" />
+        <ScrollAnimate>
+          <SectionHeading subtitle="What We Offer" title="Products" />
+        </ScrollAnimate>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map((c) => (
-            <Link
-              key={c.name}
-              to="/products"
-              className="group bg-background rounded overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-            >
-              <div className="h-44 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors">
-                <c.icon className="h-16 w-16 text-primary/25 group-hover:text-primary/40 transition-colors" />
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{c.name}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{c.desc}</p>
-              </div>
-            </Link>
+          {categories.map((c, i) => (
+            <ScrollAnimate key={c.name} delay={i * 100}>
+              <Link
+                to="/products"
+                className="group bg-background rounded overflow-hidden shadow-sm hover:shadow-lg transition-shadow block"
+              >
+                <div className="h-44 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors">
+                  <c.icon className="h-16 w-16 text-primary/25 group-hover:text-primary/40 transition-colors" />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{c.name}</h3>
+                  <p className="text-sm text-muted-foreground mt-1">{c.desc}</p>
+                </div>
+              </Link>
+            </ScrollAnimate>
           ))}
         </div>
       </div>
@@ -113,16 +120,20 @@ const HomePage = () => (
     {/* Services */}
     <section className="py-20">
       <div className="container mx-auto">
-        <SectionHeading subtitle="Our Services" title="Key" highlight="Services" />
+        <ScrollAnimate>
+          <SectionHeading subtitle="Our Services" title="Key" highlight="Services" />
+        </ScrollAnimate>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((s) => (
-            <div key={s.title} className="p-6 text-center border border-border rounded hover:border-primary/30 hover:shadow-md transition-all group">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
-                <s.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
+          {services.map((s, i) => (
+            <ScrollAnimate key={s.title} delay={i * 100}>
+              <div className="p-6 text-center border border-border rounded hover:border-primary/30 hover:shadow-md transition-all group h-full">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
+                  <s.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                <h3 className="font-heading font-semibold text-foreground mb-2">{s.title}</h3>
+                <p className="text-sm text-muted-foreground">{s.desc}</p>
               </div>
-              <h3 className="font-heading font-semibold text-foreground mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground">{s.desc}</p>
-            </div>
+            </ScrollAnimate>
           ))}
         </div>
       </div>
@@ -134,26 +145,28 @@ const HomePage = () => (
       <div className="absolute inset-0 bg-secondary/90" />
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <SectionHeading title="Why Choose" highlight="Cure Tech Pharma?" center={false} light />
-            <ul className="space-y-4 mt-6">
-              {whyUs.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                  <span className="text-secondary-foreground/85 text-sm md:text-base">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 mt-8 px-8 py-3 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition-colors"
-            >
-              Become a Partner <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="hidden lg:flex justify-center">
+          <ScrollAnimate>
+            <div>
+              <SectionHeading title="Why Choose" highlight="Cure Tech Pharma?" center={false} light />
+              <ul className="space-y-4 mt-6">
+                {whyUs.map((item, i) => (
+                  <li key={item} className="flex items-start gap-3" style={{ animationDelay: `${i * 80}ms` }}>
+                    <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                    <span className="text-secondary-foreground/85 text-sm md:text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 mt-8 px-8 py-3 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition-colors"
+              >
+                Become a Partner <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </ScrollAnimate>
+          <ScrollAnimate delay={200} className="hidden lg:flex justify-center">
             <img src={indiaMap} alt="Distribution network across India" className="max-w-xs w-full opacity-70" />
-          </div>
+          </ScrollAnimate>
         </div>
       </div>
     </section>
@@ -166,40 +179,44 @@ const HomePage = () => (
           { num: "1000+", label: "Partner Pharmacies" },
           { num: "28+", label: "States Covered" },
           { num: "10+", label: "Years Experience" },
-        ].map((s) => (
-          <div key={s.label} className="text-center py-8 border border-border rounded">
-            <div className="text-3xl md:text-4xl font-heading font-bold text-primary">{s.num}</div>
-            <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
-          </div>
+        ].map((s, i) => (
+          <ScrollAnimate key={s.label} delay={i * 100}>
+            <div className="text-center py-8 border border-border rounded">
+              <div className="text-3xl md:text-4xl font-heading font-bold text-primary">{s.num}</div>
+              <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
+            </div>
+          </ScrollAnimate>
         ))}
       </div>
     </section>
 
     {/* CTA */}
-    <section className="py-16 bg-cta-gradient text-primary-foreground">
-      <div className="container mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-heading font-bold">Ready to Partner With Us?</h2>
-        <p className="text-primary-foreground/70 mt-3 mb-8 max-w-lg mx-auto">
-          Contact us today to discuss wholesale pricing and distribution partnership opportunities.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            to="/contact"
-            className="px-8 py-3 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition"
-          >
-            Contact Us
-          </Link>
-          <a
-            href="https://wa.me/919014288588"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 border-2 border-primary-foreground/30 text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary-foreground/10 transition"
-          >
-            WhatsApp Us
-          </a>
+    <ScrollAnimate>
+      <section className="py-16 bg-cta-gradient text-primary-foreground">
+        <div className="container mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold">Ready to Partner With Us?</h2>
+          <p className="text-primary-foreground/70 mt-3 mb-8 max-w-lg mx-auto">
+            Contact us today to discuss wholesale pricing and distribution partnership opportunities.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contact"
+              className="px-8 py-3 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition"
+            >
+              Contact Us
+            </Link>
+            <a
+              href="https://wa.me/919014288588"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 border-2 border-primary-foreground/30 text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary-foreground/10 transition"
+            >
+              WhatsApp Us
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </ScrollAnimate>
   </main>
 );
 

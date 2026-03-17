@@ -33,9 +33,9 @@ const Navbar = () => {
               <MapPin className="h-3 w-3" />
               H.No: 7-1-211/32, 3rd Floor, D.K Road, Ameerpet, Hyderabad – 500016
             </span>
-            <a href="mailto:info@curetechpharma.com" className="flex items-center gap-1.5 hover:opacity-80">
+            <a href="mailto:info@curetechpharma.in" className="flex items-center gap-1.5 hover:opacity-80">
               <Mail className="h-3 w-3" />
-              info@curetechpharma.com
+              info@curetechpharma.in
             </a>
           </div>
           <div className="flex items-center gap-4">

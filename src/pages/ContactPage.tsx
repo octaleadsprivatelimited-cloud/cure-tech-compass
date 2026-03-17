@@ -45,7 +45,7 @@ const ContactPage = () => {
 
             {[
               { icon: Phone, label: "Phone / WhatsApp", value: "+91 9014288588", href: "tel:+919014288588" },
-              { icon: Mail, label: "Email", value: "info@curetechpharma.com", href: "mailto:info@curetechpharma.com" },
+              { icon: Mail, label: "Email", value: "info@curetechpharma.in", href: "mailto:info@curetechpharma.in" },
               { icon: MapPin, label: "Address", value: "H.No: 7-1-211/32, 3rd Floor, D.K Road, Ameerpet, Opp. Sonubhai Ammavari Temple, Hyderabad – 500016" },
             ].map((item) => (
               <div key={item.label} className="flex gap-4">
