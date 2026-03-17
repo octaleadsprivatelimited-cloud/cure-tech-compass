@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,42 +6,43 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 210 40% 11%;
+    --background: 0 0% 100%;
+    --foreground: 220 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 40% 11%;
+    --card-foreground: 220 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 11%;
+    --popover-foreground: 220 20% 20%;
 
-    --primary: 207 90% 35%;
+    --primary: 220 80% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 150 45% 45%;
+    --secondary: 220 80% 25%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 210 15% 45%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 150 40% 94%;
-    --accent-foreground: 150 45% 25%;
+    --accent: 142 55% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 207 90% 35%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 220 80% 40%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
-    /* Custom tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(207 90% 25%) 0%, hsl(207 90% 40%) 50%, hsl(195 80% 45%) 100%);
-    --section-gradient: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(207 30% 96%) 100%);
-    --card-shadow: 0 4px 24px -4px hsl(207 90% 35% / 0.08);
-    --card-shadow-hover: 0 12px 40px -8px hsl(207 90% 35% / 0.15);
-    --green-gradient: linear-gradient(135deg, hsl(150 45% 45%) 0%, hsl(160 50% 50%) 100%);
+    /* Custom pharma tokens */
+    --topbar-bg: 220 80% 25%;
+    --topbar-fg: 0 0% 100%;
+    --nav-bg: 0 0% 100%;
+    --hero-overlay: 220 80% 15%;
+    --section-alt: 220 20% 97%;
+    --cta-gradient: linear-gradient(135deg, hsl(220 80% 40%), hsl(220 80% 30%));
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -59,33 +60,28 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Open Sans', sans-serif;
   }
-  h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
   }
 }
 
 @layer utilities {
-  .text-gradient-primary {
-    background: var(--hero-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .bg-topbar {
+    background-color: hsl(var(--topbar-bg));
   }
-  .bg-hero-gradient {
-    background: var(--hero-gradient);
+  .text-topbar {
+    color: hsl(var(--topbar-fg));
   }
-  .bg-section-gradient {
-    background: var(--section-gradient);
+  .bg-section-alt {
+    background-color: hsl(var(--section-alt));
   }
-  .bg-green-gradient {
-    background: var(--green-gradient);
+  .bg-hero-overlay {
+    background-color: hsl(var(--hero-overlay) / 0.75);
   }
-  .shadow-card {
-    box-shadow: var(--card-shadow);
-  }
-  .shadow-card-hover {
-    box-shadow: var(--card-shadow-hover);
+  .bg-cta-gradient {
+    background: var(--cta-gradient);
   }
 }
