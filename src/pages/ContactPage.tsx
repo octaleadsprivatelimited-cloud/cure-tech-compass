@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SectionHeading from "@/components/SectionHeading";
+import PageHero from "@/components/PageHero";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
