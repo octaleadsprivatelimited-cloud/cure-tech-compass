@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PageSEO from "@/components/PageSEO";
+import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Pill, Heart, FlaskConical, Syringe, Brain, Search, SlidersHorizontal, Grid3X3, LayoutList } from "lucide-react";
