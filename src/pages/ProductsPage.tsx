@@ -1,5 +1,4 @@
 import SectionHeading from "@/components/SectionHeading";
-import { Button } from "@/components/ui/button";
 import { Pill, Heart, FlaskConical, Syringe, Leaf, Shield, Package } from "lucide-react";
 
 const categories = [
@@ -13,35 +12,34 @@ const categories = [
 ];
 
 const ProductsPage = () => (
-  <main className="pt-20">
-    <section className="relative py-24 bg-hero-gradient">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground mb-4">Our Products</h1>
-        <p className="text-primary-foreground/80 max-w-xl">Browse our comprehensive range of pharmaceutical products.</p>
+  <main>
+    <section className="bg-secondary py-20 text-center">
+      <div className="container mx-auto">
+        <h1 className="text-4xl md:text-5xl font-heading font-bold text-secondary-foreground">Our Products</h1>
+        <p className="text-secondary-foreground/60 mt-3">Home / Products</p>
       </div>
     </section>
 
     <section className="py-20">
-      <div className="container mx-auto px-4">
-        <SectionHeading title="Product Categories" subtitle="Quality pharmaceutical products sourced from licensed manufacturers across India" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="container mx-auto">
+        <SectionHeading subtitle="What We Offer" title="Product" highlight="Categories" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((c) => (
-            <div key={c.name} className="group bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1 overflow-hidden">
-              <div className="h-48 bg-accent flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                <c.icon className="h-20 w-20 text-primary/30 group-hover:text-primary/50 transition-colors" />
+            <div key={c.name} className="group bg-background border border-border rounded overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors">
+                <c.icon className="h-20 w-20 text-primary/20 group-hover:text-primary/35 transition-colors" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-2">{c.name}</h3>
+                <h3 className="text-xl font-heading font-semibold text-foreground mb-2">{c.name}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{c.desc}</p>
-                <Button asChild variant="outline" size="sm">
-                  <a
-                    href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(c.name)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Inquire Now
-                  </a>
-                </Button>
+                <a
+                  href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(c.name)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-5 py-2 text-xs font-heading font-semibold border border-primary text-primary rounded hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  Inquire Now
+                </a>
               </div>
             </div>
           ))}
