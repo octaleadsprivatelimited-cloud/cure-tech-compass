@@ -60,20 +60,20 @@ const HomePage = () => (
     </section>
 
     {/* About Summary */}
-    <section className="py-20">
-      <div className="container mx-auto grid lg:grid-cols-2 gap-14 items-center">
+    <section className="py-12 md:py-20">
+      <div className="container mx-auto px-5 md:px-4 grid lg:grid-cols-2 gap-8 md:gap-14 items-center">
         <ScrollAnimate>
           <div className="rounded overflow-hidden">
-            <img src={aboutTeam} alt="Cure Tech Pharma team" className="w-full h-auto" />
+            <img src={aboutTeam} alt="Cure Tech Pharma team" className="w-full h-48 md:h-auto object-cover rounded" />
           </div>
         </ScrollAnimate>
         <ScrollAnimate delay={200}>
           <div>
             <SectionHeading title="About" highlight="Cure Tech Pharma" center={false} />
-            <p className="text-muted-foreground leading-relaxed mb-4">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
               Cure Tech Pharma is a leading pharmaceutical distributor and wholesale supplier headquartered in Hyderabad, India. We bridge the gap between pharmaceutical manufacturers and healthcare providers across the nation.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
               Our extensive distribution network, coupled with stringent quality control measures, ensures that every product reaching our partners meets the highest standards of safety and efficacy.
             </p>
             <Link
