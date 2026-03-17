@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import { Shield, Truck, Award, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package, ArrowRight, CheckCircle2 } from "lucide-react";
+import whyChooseBg from "@/assets/why-choose-bg.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 import aboutTeam from "@/assets/about-team.jpg";
 import indiaMap from "@/assets/india-map.png";
