@@ -189,8 +189,8 @@ const HomePage = () => (
     </section>
 
     {/* Stats */}
-    <section className="py-16">
-      <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="py-10 md:py-16">
+      <div className="container mx-auto px-5 md:px-4 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
         {[
           { num: "500+", label: "Products" },
           { num: "1000+", label: "Partner Pharmacies" },
@@ -198,9 +198,9 @@ const HomePage = () => (
           { num: "10+", label: "Years Experience" },
         ].map((s, i) => (
           <ScrollAnimate key={s.label} delay={i * 100}>
-            <div className="text-center py-8 border border-border rounded">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-primary">{s.num}</div>
-              <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
+            <div className="text-center py-5 md:py-8 border border-border rounded">
+              <div className="text-2xl md:text-4xl font-heading font-bold text-primary">{s.num}</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">{s.label}</div>
             </div>
           </ScrollAnimate>
         ))}
