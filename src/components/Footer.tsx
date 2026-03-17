@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Linkedin, Facebook, Twitter } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
-  <footer className="bg-secondary text-secondary-foreground relative overflow-hidden">
+  <footer className="bg-background text-foreground relative overflow-hidden">
     {/* Background illustration */}
     <div className="absolute inset-0 opacity-[0.04] pointer-events-none flex items-center justify-center">
       <img src={logo} alt="" className="w-[500px] h-[500px] object-contain" />
