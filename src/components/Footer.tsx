@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Linkedin, Facebook, Twitter } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
-  <footer className="bg-secondary text-secondary-foreground">
-    <div className="container mx-auto px-4 py-14">
+  <footer className="bg-secondary text-secondary-foreground relative overflow-hidden">
+    {/* Background illustration */}
+    <div className="absolute inset-0 opacity-[0.04] pointer-events-none flex items-center justify-center">
+      <img src={logo} alt="" className="w-[500px] h-[500px] object-contain" />
+    </div>
+
+    <div className="container mx-auto px-4 py-14 relative z-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Company */}
         <div>
-          <h3 className="text-lg font-heading font-bold mb-4">Cure Tech Pharma</h3>
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logo} alt="Cure Tech Pharma" className="h-12 w-12 rounded-full bg-primary-foreground/10 p-0.5" />
+            <h3 className="text-lg font-heading font-bold">Cure Tech Pharma</h3>
+          </div>
           <p className="text-sm opacity-75 leading-relaxed mb-5">
             Trusted pharmaceutical distributor and wholesale supplier delivering quality medicines and healthcare products across India.
           </p>
@@ -61,7 +70,7 @@ const Footer = () => (
         </div>
       </div>
     </div>
-    <div className="border-t border-primary-foreground/10">
+    <div className="border-t border-primary-foreground/10 relative z-10">
       <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs opacity-50">
         <span>© 2025 Cure Tech Pharma. All Rights Reserved.</span>
         <span>
