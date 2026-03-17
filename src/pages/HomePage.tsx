@@ -74,7 +74,7 @@ const HomePage = () => (
       <div className="container mx-auto px-5 md:px-4 grid lg:grid-cols-2 gap-8 md:gap-14 items-center">
         <ScrollAnimate>
           <div className="rounded overflow-hidden">
-            <img src={aboutTeam} alt="Cure Tech Pharma team" className="w-full h-48 md:h-auto object-cover rounded" />
+            <img src={aboutTeam} alt="Cure Tech Pharma team" className="w-full h-48 md:h-auto object-cover rounded" loading="lazy" />
           </div>
         </ScrollAnimate>
         <ScrollAnimate delay={200}>
@@ -165,7 +165,7 @@ const HomePage = () => (
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <ScrollAnimate>
             <div className="relative rounded-lg overflow-hidden">
-              <img src={whyChoosePharma} alt="Pharmaceutical professional" className="w-full h-52 md:h-auto object-cover rounded-lg" />
+              <img src={whyChoosePharma} alt="Pharmaceutical professional" className="w-full h-52 md:h-auto object-cover rounded-lg" loading="lazy" />
               <div className="absolute bottom-4 left-4 w-16 h-16 text-accent opacity-30">
                 <svg viewBox="0 0 64 64" fill="currentColor"><path d="M28 4h8v24h24v8H36v24h-8V36H4v-8h24V4z"/></svg>
               </div>
