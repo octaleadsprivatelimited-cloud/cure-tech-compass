@@ -6,7 +6,7 @@ import pharmaBg from "@/assets/footer-pharma-bg.png";
 const Footer = () => (
   <footer className="bg-background text-foreground relative overflow-hidden">
     {/* Background illustration */}
-    <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+    <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
       <img src={pharmaBg} alt="" className="w-full h-full object-cover" />
     </div>
 
