@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Linkedin, Facebook, Twitter } from "lucide-react";
 import logo from "@/assets/logo.png";
+import pharmaBg from "@/assets/footer-pharma-bg.png";
 
 const Footer = () => (
   <footer className="bg-background text-foreground relative overflow-hidden">
     {/* Background illustration */}
-    <div className="absolute inset-0 opacity-[0.04] pointer-events-none flex items-center justify-center">
-      <img src={logo} alt="" className="w-[500px] h-[500px] object-contain" />
+    <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+      <img src={pharmaBg} alt="" className="w-full h-full object-cover" />
     </div>
 
     <div className="container mx-auto px-4 py-14 relative z-10">
