@@ -115,20 +115,20 @@ const HomePage = () => (
     </section>
 
     {/* Services */}
-    <section className="py-20">
-      <div className="container mx-auto">
+    <section className="py-12 md:py-20">
+      <div className="container mx-auto px-5 md:px-4">
         <ScrollAnimate>
           <SectionHeading subtitle="Our Services" title="Key" highlight="Services" />
         </ScrollAnimate>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {services.map((s, i) => (
             <ScrollAnimate key={s.title} delay={i * 100}>
-              <div className="p-6 text-center border border-border rounded hover:border-primary/30 hover:shadow-md transition-all group h-full">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary transition-colors">
-                  <s.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
+              <div className="p-4 md:p-6 text-center border border-border rounded hover:border-primary/30 hover:shadow-md transition-all group h-full">
+                <div className="w-11 h-11 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:bg-primary transition-colors">
+                  <s.icon className="h-5 w-5 md:h-6 md:w-6 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <h3 className="font-heading font-semibold text-foreground mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground">{s.desc}</p>
+                <h3 className="font-heading font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">{s.title}</h3>
+                <p className="text-xs md:text-sm text-muted-foreground line-clamp-3">{s.desc}</p>
               </div>
             </ScrollAnimate>
           ))}
