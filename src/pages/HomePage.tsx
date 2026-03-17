@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PageSEO from "@/components/PageSEO";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Shield, Truck, Users, Package, ArrowRight, Clock, TrendingUp, Award, Headphones } from "lucide-react";
