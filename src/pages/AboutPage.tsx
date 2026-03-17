@@ -22,6 +22,7 @@ const teamMembers = [
 
 const AboutPage = () => (
   <main>
+    <PageSEO title="About Us" description="Learn about Cure Tech Pharma – a leading pharmaceutical distributor headquartered in Hyderabad, India. Our mission, vision, and experienced leadership team." path="/about" />
     <section className="bg-secondary py-14 md:py-20 text-center">
       <div className="container mx-auto px-5">
         <h1 className="text-3xl md:text-5xl font-heading font-bold text-secondary-foreground">About Us</h1>
