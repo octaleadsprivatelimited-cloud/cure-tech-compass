@@ -44,7 +44,7 @@ const HomePage = () => (
       <div className="absolute inset-0 bg-hero-overlay" />
       <div className="relative z-10 text-center px-5 md:px-4 max-w-3xl animate-fade-up">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight">
-          Trusted Pharmaceutical Distributor Across India
+          Quality Medicines – Trusted Healthcare
         </h1>
         <p className="text-sm md:text-lg text-primary-foreground/75 mt-4 md:mt-6 mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto">
           Cure Tech Pharma provides reliable wholesale pharmaceutical distribution delivering quality medicines and healthcare products across India.
