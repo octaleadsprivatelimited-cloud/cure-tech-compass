@@ -19,7 +19,13 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#fff;">
+        <img src="/favicon.png" alt="Loading..." style="width:80px;height:80px;animation:pulse 1.5s infinite;" />
+      </div>
+    </div>
+    <style>@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.95)}}</style>
     <script type="module" src="/src/main.tsx"></script>
+  </body>
   </body>
 </html>
