@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Linkedin, Facebook, Twitter, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import pharmaBg from "@/assets/footer-pharma-bg.png";
+import whatsappIcon from "@/assets/whatsapp.svg";
 
 const CollapsibleSection = ({ title, children }: { title: string; children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
