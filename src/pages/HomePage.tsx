@@ -176,6 +176,12 @@ const HomePage = () => (
                   </div>
                 ))}
               </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 mt-8 px-8 py-3.5 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition-colors"
+              >
+                Become a Partner <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </ScrollAnimate>
         </div>
