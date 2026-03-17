@@ -57,7 +57,7 @@ const Navbar = () => {
       <header className={`sticky top-0 z-50 bg-background border-b border-border transition-shadow ${scrolled ? "shadow-md" : ""}`}>
         <div className="container mx-auto flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src={logo} alt="Cure Tech Pharma" className="h-20 lg:h-28 w-auto -my-4 lg:-my-6" />
+            <img src={logo} alt="Cure Tech Pharma" className="h-12 lg:h-16 w-auto" />
           </Link>
 
           {/* Desktop nav */}
