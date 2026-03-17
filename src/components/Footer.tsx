@@ -48,6 +48,14 @@ const Footer = () => (
                 <Icon className="h-3.5 w-3.5" />
               </a>
             ))}
+            <a
+              href="https://wa.me/919014288588?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded bg-primary-foreground/10 flex items-center justify-center hover:bg-[#25D366] transition-colors"
+            >
+              <img src={whatsappIcon} alt="WhatsApp" className="h-4 w-4" />
+            </a>
           </div>
         </div>
 
