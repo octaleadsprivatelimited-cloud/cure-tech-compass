@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
-import { Shield, Truck, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package, ArrowRight, CheckCircle2 } from "lucide-react";
-import whyChooseBg from "@/assets/why-choose-bg.jpg";
+import { Shield, Truck, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package, ArrowRight, Clock, TrendingUp, Award, Headphones } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import aboutTeam from "@/assets/about-team.jpg";
-import indiaMap from "@/assets/india-map.png";
+import whyChoosePharma from "@/assets/why-choose-pharma.jpg";
 
 const services = [
   { icon: Truck, title: "Wholesale Distribution", desc: "Bulk pharmaceutical supply across all Indian states with reliable logistics." },
@@ -23,13 +22,11 @@ const categories = [
   { icon: Shield, name: "Antibiotics", desc: "Comprehensive antibiotic formulations from licensed sources." },
 ];
 
-const whyUs = [
-  "Pan-India distribution network covering 28+ states",
-  "Competitive wholesale pricing for bulk orders",
-  "Quality certified products from licensed manufacturers",
-  "Timely delivery with efficient logistics",
-  "Temperature-controlled storage and handling",
-  "Dedicated customer support team",
+const whyUsFeatures = [
+  { icon: Clock, title: "Timely Delivery", desc: "Fast and reliable delivery across all Indian states with efficient logistics." },
+  { icon: TrendingUp, title: "Competitive Pricing", desc: "Best wholesale rates for bulk pharmaceutical orders." },
+  { icon: Award, title: "Quality Assured", desc: "Certified products from licensed manufacturers with batch traceability." },
+  { icon: Headphones, title: "Dedicated Support", desc: "Round-the-clock customer support for all partner needs." },
 ];
 
 const HomePage = () => (
@@ -140,32 +137,46 @@ const HomePage = () => (
     </section>
 
     {/* Why Choose Us */}
-    <section className="relative py-20 md:py-28 overflow-hidden">
-      <img src={whyChooseBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-secondary/90" />
-      <div className="container mx-auto relative z-10">
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <ScrollAnimate>
-            <div>
-              <SectionHeading title="Why Choose" highlight="Cure Tech Pharma?" center={false} light />
-              <ul className="space-y-4 mt-6">
-                {whyUs.map((item, i) => (
-                  <li key={item} className="flex items-start gap-3" style={{ animationDelay: `${i * 80}ms` }}>
-                    <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                    <span className="text-secondary-foreground/85 text-sm md:text-base">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 mt-8 px-8 py-3 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition-colors"
-              >
-                Become a Partner <ArrowRight className="h-4 w-4" />
-              </Link>
+            <div className="relative rounded-lg overflow-hidden">
+              <img src={whyChoosePharma} alt="Pharmaceutical professional" className="w-full h-auto object-cover rounded-lg" />
+              <div className="absolute bottom-4 left-4 w-16 h-16 text-accent opacity-30">
+                <svg viewBox="0 0 64 64" fill="currentColor"><path d="M28 4h8v24h24v8H36v24h-8V36H4v-8h24V4z"/></svg>
+              </div>
             </div>
           </ScrollAnimate>
-          <ScrollAnimate delay={200} className="hidden lg:flex justify-center">
-            <img src={indiaMap} alt="Distribution network across India" className="max-w-xs w-full opacity-70" />
+          <ScrollAnimate delay={200}>
+            <div>
+              <span className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-accent uppercase tracking-widest mb-3">
+                <span className="w-2.5 h-2.5 rounded-sm bg-accent inline-block" />
+                Why Choose Us?
+              </span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight mt-2">
+                Your Trusted{" "}
+                <span className="bg-accent text-accent-foreground px-2 py-0.5 rounded">Pharmaceutical</span>{" "}
+                Distribution{" "}
+                <span className="bg-accent text-accent-foreground px-2 py-0.5 rounded">Partner</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mt-5 mb-8">
+                Cure Tech Pharma is committed to delivering quality medicines across India with reliability, competitive pricing, and exceptional service that healthcare providers can depend on.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-6">
+                {whyUsFeatures.map((f) => (
+                  <div key={f.title} className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center shrink-0">
+                      <f.icon className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground text-sm">{f.title}</h4>
+                      <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{f.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </ScrollAnimate>
         </div>
       </div>
