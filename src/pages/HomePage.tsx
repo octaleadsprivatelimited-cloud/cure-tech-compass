@@ -100,26 +100,25 @@ const HomePage = () => (
         <ScrollAnimate>
           <SectionHeading subtitle="What We Offer" title="Products" />
         </ScrollAnimate>
-        <div className="flex flex-col gap-2 md:gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {categories.map((c, i) => (
             <ScrollAnimate key={c.name} delay={i * 80}>
               <Link
                 to="/products"
-                className="group flex items-center gap-4 md:gap-6 bg-background rounded-lg border border-border hover:border-primary/40 hover:shadow-md transition-all duration-300 p-3 md:p-4"
+                className="group bg-background rounded-xl overflow-hidden border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 block"
               >
-                <div className="w-16 h-16 md:w-24 md:h-24 shrink-0 bg-muted/30 rounded-md flex items-center justify-center p-2 overflow-hidden">
+                <div className="aspect-square bg-muted/20 flex items-center justify-center p-6 overflow-hidden">
                   <img
                     src={c.img}
                     alt={c.name}
-                    className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm md:text-lg font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{c.name}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-0.5">{c.desc}</p>
+                <div className="p-3 md:p-4 border-t border-border">
+                  <h3 className="text-xs md:text-sm font-heading font-semibold text-foreground group-hover:text-primary transition-colors truncate">{c.name}</h3>
+                  <p className="text-[11px] md:text-xs text-muted-foreground mt-0.5">{c.desc}</p>
                 </div>
-                <ArrowRight className="h-4 w-4 md:h-5 md:w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
               </Link>
             </ScrollAnimate>
           ))}
