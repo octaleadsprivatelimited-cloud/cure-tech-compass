@@ -113,9 +113,9 @@ const Footer = () => (
     <div className="border-t border-primary-foreground/10 relative z-10">
       <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs opacity-50">
         <span>© 2025 Cure Tech Pharma. All Rights Reserved.</span>
-        <span className="text-secondary font-semibold opacity-100">
+        <span className="text-secondary font-bold opacity-100">
           Developed by{" "}
-          <a href="https://www.octaleads.com" target="_blank" rel="noopener noreferrer" className="text-accent underline hover:opacity-80 transition">
+          <a href="https://www.octaleads.com" target="_blank" rel="noopener noreferrer" className="text-[hsl(142,55%,30%)] font-bold underline hover:opacity-80 transition">
             Octaleads Pvt Ltd
           </a>
         </span>
