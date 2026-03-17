@@ -112,7 +112,7 @@ const AboutPage = () => (
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-40 md:h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-60 md:h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-3 md:p-5 text-center">
