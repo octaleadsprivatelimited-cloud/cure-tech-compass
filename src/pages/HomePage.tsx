@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
-import { Shield, Truck, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package, ArrowRight, CheckCircle2 } from "lucide-react";
-import whyChooseBg from "@/assets/why-choose-bg.jpg";
+import { Shield, Truck, Users, Pill, Heart, Syringe, FlaskConical, Leaf, Package, ArrowRight, Clock, TrendingUp, Award, Headphones } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import aboutTeam from "@/assets/about-team.jpg";
-import indiaMap from "@/assets/india-map.png";
+import whyChoosePharma from "@/assets/why-choose-pharma.jpg";
 
 const services = [
   { icon: Truck, title: "Wholesale Distribution", desc: "Bulk pharmaceutical supply across all Indian states with reliable logistics." },
