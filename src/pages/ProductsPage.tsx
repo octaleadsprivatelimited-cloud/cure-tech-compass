@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PageSEO from "@/components/PageSEO";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Pill, Heart, FlaskConical, Syringe, Brain, Search, SlidersHorizontal, Grid3X3, LayoutList } from "lucide-react";
@@ -77,6 +78,7 @@ const ProductsPage = () => {
 
   return (
     <main>
+      <PageSEO title="Products" description="Browse 500+ quality pharmaceutical products from Cure Tech Pharma. General medicines, antibiotics, calcium supplements, gastro range and more." path="/products" />
       {/* Hero Banner */}
       <section className="bg-secondary py-14 md:py-20 text-center">
         <div className="container mx-auto px-5">

@@ -1,3 +1,4 @@
+import PageSEO from "@/components/PageSEO";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Truck, Building2, Heart, Package } from "lucide-react";
@@ -12,6 +13,7 @@ const features = [
 
 const DistributionPage = () => (
   <main>
+    <PageSEO title="Distribution Network" description="Cure Tech Pharma's nationwide pharmaceutical distribution network covering 28+ Indian states with reliable logistics and cold chain management." path="/distribution" />
     <section className="bg-secondary py-14 md:py-20 text-center">
       <div className="container mx-auto px-5">
         <h1 className="text-3xl md:text-5xl font-heading font-bold text-secondary-foreground">Distribution Network</h1>

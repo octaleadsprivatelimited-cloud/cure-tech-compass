@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PageSEO from "@/components/PageSEO";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Shield, Truck, Users, Package, ArrowRight, Clock, TrendingUp, Award, Headphones } from "lucide-react";
@@ -39,6 +40,7 @@ const whyUsFeatures = [
 
 const HomePage = () => (
   <main>
+    <PageSEO title="Quality Medicines – Trusted Healthcare" description="Cure Tech Pharma is a leading pharmaceutical distributor and wholesale supplier in Hyderabad, delivering quality medicines across India. 500+ products, 28+ states covered." path="/" />
     {/* Hero */}
     <section className="relative h-[80vh] md:h-[85vh] min-h-[500px] md:min-h-[550px] flex items-center justify-center overflow-hidden">
       <img src={heroMobile} alt="" className="absolute inset-0 w-full h-full object-cover md:hidden" />

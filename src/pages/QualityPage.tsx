@@ -1,3 +1,4 @@
+import PageSEO from "@/components/PageSEO";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Shield, Thermometer, FileCheck, CheckCircle2 } from "lucide-react";
@@ -12,6 +13,7 @@ const standards = [
 
 const QualityPage = () => (
   <main>
+    <PageSEO title="Quality Assurance" description="Cure Tech Pharma's quality assurance standards – stringent testing, batch traceability, temperature-controlled storage, and certified pharmaceutical products." path="/quality" />
     <section className="bg-secondary py-14 md:py-20 text-center">
       <div className="container mx-auto px-5">
         <h1 className="text-3xl md:text-5xl font-heading font-bold text-secondary-foreground">Quality & Compliance</h1>
