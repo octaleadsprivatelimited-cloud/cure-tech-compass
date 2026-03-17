@@ -32,26 +32,26 @@ const whyUsFeatures = [
 const HomePage = () => (
   <main>
     {/* Hero */}
-    <section className="relative h-[85vh] min-h-[550px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[70vh] md:h-[85vh] min-h-[450px] md:min-h-[550px] flex items-center justify-center overflow-hidden">
       <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-hero-overlay" />
-      <div className="relative z-10 text-center px-4 max-w-3xl animate-fade-up">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight">
+      <div className="relative z-10 text-center px-5 md:px-4 max-w-3xl animate-fade-up">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight">
           Trusted Pharmaceutical Distributor Across India
         </h1>
-        <p className="text-base md:text-lg text-primary-foreground/75 mt-6 mb-10 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-sm md:text-lg text-primary-foreground/75 mt-4 md:mt-6 mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto">
           Cure Tech Pharma provides reliable wholesale pharmaceutical distribution delivering quality medicines and healthcare products across India.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
           <Link
             to="/products"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-3.5 bg-primary text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary/90 transition-colors"
           >
             Know More <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-primary-foreground/30 text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary-foreground/10 transition-colors"
+            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-3.5 border-2 border-primary-foreground/30 text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary-foreground/10 transition-colors"
           >
             Contact Us
           </Link>
