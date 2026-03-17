@@ -107,8 +107,13 @@ const HomePage = () => (
                 to="/products"
                 className="group bg-background rounded overflow-hidden shadow-sm hover:shadow-lg transition-shadow block"
               >
-                <div className="h-28 md:h-44 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors">
-                  <c.icon className="h-10 w-10 md:h-16 md:w-16 text-primary/25 group-hover:text-primary/40 transition-colors" />
+                <div className="h-32 md:h-48 bg-muted/30 flex items-center justify-center p-3 overflow-hidden">
+                  <img
+                    src={c.img}
+                    alt={c.name}
+                    className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="p-3 md:p-5">
                   <h3 className="text-sm md:text-lg font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{c.name}</h3>
