@@ -74,7 +74,7 @@ const HomePage = () => (
       <div className="container mx-auto px-5 md:px-4 grid lg:grid-cols-2 gap-8 md:gap-14 items-center">
         <ScrollAnimate>
           <div className="rounded overflow-hidden">
-            <img src={aboutTeam} alt="Cure Tech Pharma team" className="w-full h-48 md:h-auto object-cover rounded" />
+            <img src={aboutTeam} alt="Cure Tech Pharma team" className="w-full h-48 md:h-auto object-cover rounded" loading="lazy" />
           </div>
         </ScrollAnimate>
         <ScrollAnimate delay={200}>
