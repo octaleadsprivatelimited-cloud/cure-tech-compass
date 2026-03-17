@@ -40,8 +40,10 @@ const whyUsFeatures = [
 const HomePage = () => (
   <main>
     {/* Hero */}
-    <section className="relative h-[70vh] md:h-[85vh] min-h-[450px] md:min-h-[550px] flex items-center justify-center overflow-hidden">
-      <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+    <section className="relative h-[80vh] md:h-[85vh] min-h-[500px] md:min-h-[550px] flex items-center justify-center overflow-hidden">
+      <img src={heroMobile} alt="" className="absolute inset-0 w-full h-full object-cover md:hidden" />
+      <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover hidden md:block" />
+      <div className="absolute inset-0 bg-hero-overlay" />
       <div className="absolute inset-0 bg-hero-overlay" />
       <div className="relative z-10 text-center px-5 md:px-4 max-w-3xl animate-fade-up">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight">
