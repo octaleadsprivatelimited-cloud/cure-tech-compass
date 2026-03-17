@@ -137,12 +137,12 @@ const HomePage = () => (
     </section>
 
     {/* Why Choose Us */}
-    <section className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="py-12 md:py-28 bg-background">
+      <div className="container mx-auto px-5 md:px-4">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <ScrollAnimate>
             <div className="relative rounded-lg overflow-hidden">
-              <img src={whyChoosePharma} alt="Pharmaceutical professional" className="w-full h-auto object-cover rounded-lg" />
+              <img src={whyChoosePharma} alt="Pharmaceutical professional" className="w-full h-52 md:h-auto object-cover rounded-lg" />
               <div className="absolute bottom-4 left-4 w-16 h-16 text-accent opacity-30">
                 <svg viewBox="0 0 64 64" fill="currentColor"><path d="M28 4h8v24h24v8H36v24h-8V36H4v-8h24V4z"/></svg>
               </div>
@@ -150,35 +150,35 @@ const HomePage = () => (
           </ScrollAnimate>
           <ScrollAnimate delay={200}>
             <div>
-              <span className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-accent uppercase tracking-widest mb-3">
+              <span className="inline-flex items-center gap-2 text-xs md:text-sm font-heading font-semibold text-accent uppercase tracking-widest mb-3">
                 <span className="w-2.5 h-2.5 rounded-sm bg-accent inline-block" />
                 Why Choose Us?
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight mt-2">
+              <h2 className="text-2xl md:text-4xl font-heading font-bold text-foreground leading-tight mt-2">
                 Your Trusted{" "}
                 <span className="bg-accent text-accent-foreground px-2 py-0.5 rounded">Pharmaceutical</span>{" "}
                 Distribution{" "}
                 <span className="bg-accent text-accent-foreground px-2 py-0.5 rounded">Partner</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed mt-5 mb-8">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mt-4 md:mt-5 mb-6 md:mb-8">
                 Cure Tech Pharma is committed to delivering quality medicines across India with reliability, competitive pricing, and exceptional service that healthcare providers can depend on.
               </p>
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-4 md:gap-6">
                 {whyUsFeatures.map((f) => (
-                  <div key={f.title} className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center shrink-0">
-                      <f.icon className="h-5 w-5 text-accent" />
+                  <div key={f.title} className="flex items-start gap-2 md:gap-3">
+                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-md bg-accent/10 flex items-center justify-center shrink-0">
+                      <f.icon className="h-4 w-4 md:h-5 md:w-5 text-accent" />
                     </div>
                     <div>
-                      <h4 className="font-heading font-semibold text-foreground text-sm">{f.title}</h4>
-                      <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{f.desc}</p>
+                      <h4 className="font-heading font-semibold text-foreground text-xs md:text-sm">{f.title}</h4>
+                      <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 leading-relaxed">{f.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 mt-8 px-8 py-3.5 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center gap-2 mt-6 md:mt-8 px-6 md:px-8 py-3 md:py-3.5 bg-accent text-accent-foreground font-heading font-semibold text-sm rounded hover:bg-accent/90 transition-colors"
               >
                 Become a Partner <ArrowRight className="h-4 w-4" />
               </Link>
