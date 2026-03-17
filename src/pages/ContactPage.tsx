@@ -104,7 +104,7 @@ const ContactPage = () => {
       <ScrollAnimate>
         <section className="h-60 md:h-80">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.3!2d78.448!3d17.437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c20f4d5555%3A0x1234567890abcdef!2sH.No%3A%207-1-211%2F32%2C%203rd%20Floor%2C%20D.K%20Road%2C%20Ameerpet%2C%20Hyderabad%20%E2%80%93%20500016!5e0!3m2!1sen!2sin!4v1710000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.3959203!2d78.4441243!3d17.4381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90ce43baaaab%3A0x9c2d5db474f5b6b7!2sCure%20Tech%20Pharma!5e0!3m2!1sen!2sin!4v1710000000000"
             width="100%"
             height="100%"
             style={{ border: 0 }}
