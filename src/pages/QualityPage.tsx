@@ -1,4 +1,5 @@
 import PageSEO from "@/components/PageSEO";
+import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import { Shield, Thermometer, FileCheck, CheckCircle2 } from "lucide-react";
