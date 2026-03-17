@@ -79,7 +79,7 @@
     background-color: hsl(var(--section-alt));
   }
   .bg-hero-overlay {
-    background-color: hsl(var(--hero-overlay) / 0.75);
+    background: linear-gradient(to bottom, hsl(var(--hero-overlay) / 0.45), hsl(var(--hero-overlay) / 0.7));
   }
   .bg-cta-gradient {
     background: var(--cta-gradient);
