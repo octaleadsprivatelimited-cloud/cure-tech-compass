@@ -22,13 +22,11 @@ const categories = [
   { icon: Shield, name: "Antibiotics", desc: "Comprehensive antibiotic formulations from licensed sources." },
 ];
 
-const whyUs = [
-  "Pan-India distribution network covering 28+ states",
-  "Competitive wholesale pricing for bulk orders",
-  "Quality certified products from licensed manufacturers",
-  "Timely delivery with efficient logistics",
-  "Temperature-controlled storage and handling",
-  "Dedicated customer support team",
+const whyUsFeatures = [
+  { icon: Clock, title: "Timely Delivery", desc: "Fast and reliable delivery across all Indian states with efficient logistics." },
+  { icon: TrendingUp, title: "Competitive Pricing", desc: "Best wholesale rates for bulk pharmaceutical orders." },
+  { icon: Award, title: "Quality Assured", desc: "Certified products from licensed manufacturers with batch traceability." },
+  { icon: Headphones, title: "Dedicated Support", desc: "Round-the-clock customer support for all partner needs." },
 ];
 
 const HomePage = () => (
