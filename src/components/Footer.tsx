@@ -15,8 +15,11 @@ const Footer = () => (
         {/* Company */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src={logo} alt="Cure Tech Pharma" className="h-12 w-12 rounded-full bg-primary-foreground/10 p-0.5" />
-            <h3 className="text-lg font-heading font-bold">Cure Tech Pharma</h3>
+            <img src={logo} alt="Cure Tech Pharma" className="h-14 w-14 rounded-full shadow-md ring-2 ring-primary/20 p-0.5" />
+            <h3 className="text-xl font-heading font-extrabold tracking-tight">
+              <span className="text-primary">Cure Tech</span>{" "}
+              <span className="text-accent">Pharma</span>
+            </h3>
           </div>
           <p className="text-sm opacity-75 leading-relaxed mb-5">
             Trusted pharmaceutical distributor and wholesale supplier delivering quality medicines and healthcare products across India.
