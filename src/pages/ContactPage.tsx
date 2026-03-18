@@ -77,9 +77,9 @@ const ContactPage = () => {
       <PageHero title="Contact Us" subtitle="Home / Contact Us" />
 
       <section className="py-12 md:py-20">
-        <div className="container mx-auto px-5 md:px-4 grid lg:grid-cols-5 gap-8 md:gap-12">
+        <div className="container mx-auto px-5 md:px-4 grid gap-8 md:gap-12 lg:grid-cols-2 lg:items-start">
           <ScrollAnimate>
-            <div className="lg:col-span-2 space-y-5 md:space-y-6">
+            <div className="space-y-5 md:space-y-6">
               <SectionHeading title="Get In" highlight="Touch" center={false} />
 
               {[
@@ -117,9 +117,9 @@ const ContactPage = () => {
             </div>
           </ScrollAnimate>
 
-          <ScrollAnimate delay={200} className="lg:col-span-3">
+          <ScrollAnimate delay={200}>
             <div className="bg-section-alt p-6 md:p-8 rounded">
-              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mb-5 md:mb-6">Send Us a Message</h3>
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 md:mb-6">Send Us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <input className={inputClass} placeholder="Your Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
