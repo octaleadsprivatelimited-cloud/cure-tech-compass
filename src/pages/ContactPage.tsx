@@ -7,6 +7,8 @@ import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojkyvvo";
+
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   phone: z.string().trim().min(10, "Enter a valid phone number").max(15),
@@ -17,16 +19,54 @@ const contactSchema = z.object({
 const ContactPage = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
+
     const result = contactSchema.safeParse(form);
     if (!result.success) {
       toast({ title: "Validation Error", description: result.error.errors[0].message, variant: "destructive" });
       return;
     }
-    toast({ title: "Message Sent!", description: "We'll get back to you shortly." });
-    setForm({ name: "", phone: "", email: "", message: "" });
+
+    setSubmitting(true);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      if (!res.ok) {
+        toast({
+          title: "Failed to send",
+          description: "Please try again in a moment, or contact us via phone/WhatsApp.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      toast({ title: "Message Sent!", description: "We'll get back to you shortly." });
+      setForm({ name: "", phone: "", email: "", message: "" });
+    } catch {
+      toast({
+        title: "Network error",
+        description: "Please check your connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputClass = "w-full px-4 py-3 border border-border rounded bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition placeholder:text-muted-foreground";
@@ -89,9 +129,10 @@ const ContactPage = () => {
                 <textarea className={`${inputClass} resize-none`} rows={5} placeholder="Your Message *" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
                 <button
                   type="submit"
+                  disabled={submitting}
                   className="px-10 py-3 bg-primary text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary/90 transition"
                 >
-                  Submit
+                  {submitting ? "Sending..." : "Submit"}
                 </button>
               </form>
             </div>
