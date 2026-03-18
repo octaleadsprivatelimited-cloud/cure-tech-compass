@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Cure Tech Pharma Website
 
-TODO: Document your project here
+Marketing website for Cure Tech Pharma built with Vite + React + TypeScript.
