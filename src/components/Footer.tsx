@@ -49,7 +49,7 @@ const Footer = () => (
               </a>
             ))}
             <a
-              href="https://wa.me/919014288588?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
+              href="https://wa.me/919440376180?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded bg-primary-foreground/10 flex items-center justify-center hover:bg-[#25D366] transition-colors"
