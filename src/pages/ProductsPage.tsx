@@ -1,31 +1,23 @@
 import { useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import PageHero from "@/components/PageHero";
-import SectionHeading from "@/components/SectionHeading";
 import ScrollAnimate from "@/components/ScrollAnimate";
-import { Pill, Heart, FlaskConical, Syringe, Brain, Search, SlidersHorizontal, Grid3X3, LayoutList } from "lucide-react";
+import { Search, Grid3X3, LayoutList, Wind, Pill, Heart, Syringe, Circle, Droplets, Baby, Sparkles, Pipette, FlaskConical, Smile, Dumbbell, Eye, Leaf, SlidersHorizontal } from "lucide-react";
 
-// Product images
-import inspan40 from "@/assets/products/inspan-40.jpg";
-import parasync650 from "@/assets/products/parasync-650.jpg";
-import dspan60 from "@/assets/products/dspan-60.jpg";
-import aceranDsr from "@/assets/products/aceran-dsr.jpg";
-import calcifastXt from "@/assets/products/calcifast-xt.jpg";
-import acetate100 from "@/assets/products/acetate-100.jpg";
-import acetateNp from "@/assets/products/acetate-np.jpg";
-import vitomed from "@/assets/products/vitomed.jpg";
-import inspanDsr from "@/assets/products/inspan-dsr.jpg";
-import ometor20 from "@/assets/products/ometor-20.jpg";
-import clavorid625 from "@/assets/products/clavorid-625.jpg";
-import clicef100dt from "@/assets/products/clicef-100dt.jpg";
-import clipiofix500 from "@/assets/products/clipiofix-500.jpg";
-import ciprofix500 from "@/assets/products/ciprofix-500.jpg";
-import cifuronCv500 from "@/assets/products/cifuron-cv500.jpg";
-import cetriwise10 from "@/assets/products/cetriwise-10.jpg";
-import cinamedD from "@/assets/products/cinamed-d.jpg";
-import ofrem200dt from "@/assets/products/ofrem-200dt.jpg";
-import ofremOz from "@/assets/products/ofrem-oz.jpg";
-import cinamedPlus from "@/assets/products/cinamed-plus.jpg";
+import catRespules from "@/assets/products/cat-respules.jpg";
+import catTablets from "@/assets/products/cat-tablets.jpg";
+import catCardiac from "@/assets/products/cat-cardiac.jpg";
+import catInjectable from "@/assets/products/cat-injectable.jpg";
+import catCapsules from "@/assets/products/cat-capsules.jpg";
+import catSyrup from "@/assets/products/cat-syrup.jpg";
+import catDrysyrup from "@/assets/products/cat-drysyrup.jpg";
+import catDermaOintment from "@/assets/products/cat-derma-ointment.jpg";
+import catDermaLotion from "@/assets/products/cat-derma-lotion.jpg";
+import catDermaSoap from "@/assets/products/cat-derma-soap.jpg";
+import catDental from "@/assets/products/cat-dental.jpg";
+import catProtein from "@/assets/products/cat-protein.jpg";
+import catEyeear from "@/assets/products/cat-eyeear.jpg";
+import catAyurvedic from "@/assets/products/cat-ayurvedic.jpg";
 
 interface Product {
   name: string;
@@ -36,34 +28,33 @@ interface Product {
 
 const categoryFilters = [
   { icon: SlidersHorizontal, name: "All" },
-  { icon: Pill, name: "General Medicines" },
-  { icon: Heart, name: "Calcium / Multivitamins" },
-  { icon: FlaskConical, name: "Gastro Range" },
-  { icon: Syringe, name: "Antibiotics" },
-  { icon: Brain, name: "Neuro / Pain" },
+  { icon: Wind, name: "Respiratory" },
+  { icon: Pill, name: "Oral" },
+  { icon: Heart, name: "Specialty" },
+  { icon: Syringe, name: "Parenteral" },
+  { icon: Baby, name: "Pediatric" },
+  { icon: Sparkles, name: "Derma" },
+  { icon: Smile, name: "Dental" },
+  { icon: Dumbbell, name: "Nutraceuticals" },
+  { icon: Eye, name: "ENT / Ophthal" },
+  { icon: Leaf, name: "Ayurvedic" },
 ];
 
 const allProducts: Product[] = [
-  { name: "INSPAN-40", desc: "Pantoprazole 40mg", img: inspan40, category: "General Medicines" },
-  { name: "PARASYNC-650", desc: "Paracetamol 650mg", img: parasync650, category: "General Medicines" },
-  { name: "DSPAN-60", desc: "Dexlansoprazole 60mg", img: dspan60, category: "General Medicines" },
-  { name: "ACERAN-DSR", desc: "Aceclofenac + Rabeprazole", img: aceranDsr, category: "General Medicines" },
-  { name: "CALCIFAST-XT", desc: "Calcium + Vitamin D3 + Minerals", img: calcifastXt, category: "Calcium / Multivitamins" },
-  { name: "ACETATE-100", desc: "Aceclotenac 100mg", img: acetate100, category: "Calcium / Multivitamins" },
-  { name: "ACETATE-NP", desc: "Aceclotenac + Paracetamol", img: acetateNp, category: "Calcium / Multivitamins" },
-  { name: "VITOMED", desc: "Multivitamin Supplement", img: vitomed, category: "Calcium / Multivitamins" },
-  { name: "INSPAN-DSR", desc: "Pantoprazole + Domperidone SR", img: inspanDsr, category: "Gastro Range" },
-  { name: "OMETOR-20", desc: "Omeprazole 20mg", img: ometor20, category: "Gastro Range" },
-  { name: "CLAVORID-625", desc: "Amoxycillin + Clavulanic Acid", img: clavorid625, category: "Antibiotics" },
-  { name: "CLICEF-100 DT", desc: "Cefixime 100mg", img: clicef100dt, category: "Antibiotics" },
-  { name: "CLIPIOFIX-500", desc: "Ciprofloxacin 500mg", img: clipiofix500, category: "Antibiotics" },
-  { name: "CIPROFIX-500", desc: "Ciprofloxacin 500mg", img: ciprofix500, category: "Antibiotics" },
-  { name: "CIFURON-CV 500", desc: "Cefuroxime + Clavulanic Acid", img: cifuronCv500, category: "Antibiotics" },
-  { name: "CETRIWISE-10", desc: "Cetirizine 10mg", img: cetriwise10, category: "Neuro / Pain" },
-  { name: "CINAMED-D", desc: "Cinnarizine + Domperidone", img: cinamedD, category: "Neuro / Pain" },
-  { name: "OFREM-200 DT", desc: "Ofloxacin 200mg", img: ofrem200dt, category: "Neuro / Pain" },
-  { name: "OFREM-OZ", desc: "Ofloxacin + Ornidazole", img: ofremOz, category: "Neuro / Pain" },
-  { name: "CINAMED-PLUS", desc: "Cinnarizine + Dimenhydrinate", img: cinamedPlus, category: "Neuro / Pain" },
+  { name: "Respules", desc: "For Inhalation – Nebulizer vials for respiratory therapy", img: catRespules, category: "Respiratory" },
+  { name: "Tablets", desc: "Oral solid dosage forms across therapeutic segments", img: catTablets, category: "Oral" },
+  { name: "Cardiac Diabetic", desc: "Heart & diabetes care medicines for chronic management", img: catCardiac, category: "Specialty" },
+  { name: "Injectable", desc: "Vials & ampoules for parenteral administration", img: catInjectable, category: "Parenteral" },
+  { name: "Capsules / Softgels", desc: "Oral capsule range including softgel formulations", img: catCapsules, category: "Oral" },
+  { name: "Syrup / Liquids", desc: "Oral liquid formulations for adults and children", img: catSyrup, category: "Oral" },
+  { name: "Dry Syrups / Drops", desc: "Pediatric & adult powder formulations and drops", img: catDrysyrup, category: "Pediatric" },
+  { name: "Derma – Ointments / Creams / Gels", desc: "Topical preparations for dermatological conditions", img: catDermaOintment, category: "Derma" },
+  { name: "Derma – Lotions / Powders / Serum", desc: "Lotions, dusting powders and hair serums", img: catDermaLotion, category: "Derma" },
+  { name: "Derma – Soaps / Shampoos / Face Wash", desc: "Medicated cleansing and personal care range", img: catDermaSoap, category: "Derma" },
+  { name: "Dental Products", desc: "Oral care range including toothpaste and mouthwash", img: catDental, category: "Dental" },
+  { name: "Protein Powder / Sachets", desc: "Nutritional supplements and health sachets", img: catProtein, category: "Nutraceuticals" },
+  { name: "Eye / Ear / Nasal Drops & Spray", desc: "Ophthalmic, ENT drops and nasal sprays", img: catEyeear, category: "ENT / Ophthal" },
+  { name: "Ayurvedic", desc: "Syrup, capsules, tonic, drops, churna & ointments", img: catAyurvedic, category: "Ayurvedic" },
 ];
 
 const ProductsPage = () => {
@@ -79,26 +70,24 @@ const ProductsPage = () => {
 
   return (
     <main>
-      <PageSEO title="Products" description="Browse 500+ quality pharmaceutical products from Cure Tech Pharma. General medicines, antibiotics, calcium supplements, gastro range and more." path="/products" />
-      <PageHero title="Our Products" subtitle="Browse our complete range of pharmaceutical products" />
+      <PageSEO title="Products" description="Browse our complete range of pharmaceutical product categories – tablets, capsules, injectables, derma range, ayurvedic, dental and more from Cure Tech Pharma." path="/products" />
+      <PageHero title="Our Products" subtitle="Browse our complete range of pharmaceutical categories" />
 
       <section className="py-8 md:py-14">
         <div className="container mx-auto px-4">
           {/* Toolbar */}
           <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-            {/* Search */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Search products..."
+                placeholder="Search categories..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full pl-10 pr-4 py-2.5 text-sm border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
               />
             </div>
 
-            {/* View toggle - desktop */}
             <div className="hidden md:flex items-center gap-1 border border-border rounded-lg p-1">
               <button
                 onClick={() => setGridView(true)}
@@ -114,14 +103,13 @@ const ProductsPage = () => {
               </button>
             </div>
 
-            {/* Product count */}
             <span className="text-sm text-muted-foreground">
-              {filtered.length} product{filtered.length !== 1 ? "s" : ""}
+              {filtered.length} categor{filtered.length !== 1 ? "ies" : "y"}
             </span>
           </div>
 
           {/* Category filters */}
-          <div className="flex gap-2 overflow-x-auto pb-2 mb-8 scrollbar-hide">
+          <div className="flex gap-2 overflow-x-auto pb-2 mb-8 scrollbar-none">
             {categoryFilters.map((cat) => (
               <button
                 key={cat.name}
@@ -141,7 +129,7 @@ const ProductsPage = () => {
           {/* Product Grid */}
           {filtered.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg">No products found</p>
+              <p className="text-muted-foreground text-lg">No categories found</p>
               <button onClick={() => { setSearch(""); setActiveCategory("All"); }} className="mt-3 text-sm text-primary hover:underline">
                 Clear filters
               </button>
@@ -150,17 +138,15 @@ const ProductsPage = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
               {filtered.map((p, i) => (
                 <ScrollAnimate key={p.name} delay={i * 40}>
-                  <div className="group bg-background rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                    {/* Image */}
-                    <div className="relative aspect-[4/5] bg-section-alt flex items-center justify-center p-6 md:p-8 overflow-hidden">
+                  <div className="group bg-card rounded-2xl border border-border hover:shadow-elevated hover:border-primary/20 transition-all duration-300 overflow-hidden">
+                    <div className="relative aspect-square bg-muted flex items-center justify-center overflow-hidden">
                       <img
                         src={p.img}
                         alt={p.name}
-                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
-                      {/* Hover overlay with button */}
-                      <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-secondary/60 to-transparent">
                         <a
                           href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
                           target="_blank"
@@ -171,16 +157,12 @@ const ProductsPage = () => {
                         </a>
                       </div>
                     </div>
-                    {/* Info */}
                     <div className="p-3 md:p-4 text-center">
-                      <p className="text-[9px] md:text-[10px] text-muted-foreground font-heading uppercase tracking-wider mb-1">{p.category}</p>
+                      <p className="text-[9px] md:text-[10px] text-accent font-heading font-semibold uppercase tracking-wider mb-1">{p.category}</p>
                       <h4 className="text-xs md:text-sm font-heading font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
                         {p.name}
                       </h4>
-                      <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5">
-                        {p.desc}
-                      </p>
-                      {/* Mobile-only button */}
+                      <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 leading-tight">{p.desc}</p>
                       <a
                         href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
                         target="_blank"
@@ -195,16 +177,15 @@ const ProductsPage = () => {
               ))}
             </div>
           ) : (
-            /* List View */
             <div className="space-y-3">
               {filtered.map((p, i) => (
                 <ScrollAnimate key={p.name} delay={i * 30}>
-                  <div className="group flex items-center gap-4 md:gap-6 bg-background border border-border rounded-xl p-3 md:p-4 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
-                    <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 bg-muted/20 rounded-lg flex items-center justify-center p-2 overflow-hidden">
+                  <div className="group flex items-center gap-4 md:gap-6 bg-card border border-border rounded-xl p-3 md:p-4 hover:shadow-elevated hover:border-primary/20 transition-all duration-300">
+                    <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 bg-muted rounded-lg overflow-hidden">
                       <img
                         src={p.img}
                         alt={p.name}
-                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
