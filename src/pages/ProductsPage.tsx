@@ -164,7 +164,7 @@ const ProductsPage = () => {
                       </h4>
                       <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 leading-tight">{p.desc}</p>
                       <a
-                        href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
+                        href={`https://wa.me/919440376180?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="md:hidden inline-block mt-2.5 px-4 py-1.5 text-[10px] font-heading font-semibold bg-primary text-primary-foreground rounded-full"
