@@ -22,9 +22,8 @@ const HeroSection = () => (
     </video>
     <div className="absolute inset-0 bg-hero-overlay z-[2]" />
 
-    {/* Animated gradient orbs for visual energy */}
-    <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[120px] animate-float z-[3]" />
-    <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-accent/10 blur-[100px] animate-float z-[3]" style={{ animationDelay: '2s' }} />
+
+
 
     <div className="relative z-10 text-center px-5 md:px-4 max-w-4xl animate-fade-up">
       <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-foreground/20 bg-primary-foreground/5 backdrop-blur-sm mb-6">
