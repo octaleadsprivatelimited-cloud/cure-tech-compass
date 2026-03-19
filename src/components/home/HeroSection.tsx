@@ -2,12 +2,25 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroMobile from "@/assets/hero-mobile.jpg";
+import heroVideoAsset from "@/assets/hero-video.mp4.asset.json";
 
 const HeroSection = () => (
   <section className="relative h-screen min-h-[600px] flex flex-col items-center justify-center overflow-hidden">
+    {/* Fallback images for mobile / while video loads */}
     <img src={heroMobile} alt="" className="absolute inset-0 w-full h-full object-cover md:hidden" />
     <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover hidden md:block" />
-    <div className="absolute inset-0 bg-hero-overlay" />
+    {/* Background video */}
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover hidden md:block z-[1]"
+      poster={heroBg}
+    >
+      <source src={heroVideoAsset.url} type="video/mp4" />
+    </video>
+    <div className="absolute inset-0 bg-hero-overlay z-[2]" />
 
     {/* Animated gradient orbs for visual energy */}
     <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[120px] animate-float" />
