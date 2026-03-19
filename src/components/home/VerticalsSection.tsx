@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import { Truck, Package, Shield, Users } from "lucide-react";
 import ScrollAnimate from "@/components/ScrollAnimate";
-import whyChoosePharma from "@/assets/why-choose-pharma.jpg";
+import bgVerticals from "@/assets/bg-verticals.jpg";
 
 const verticals = [
   { icon: Truck, title: "Wholesale Distribution", desc: "Bulk pharmaceutical supply across all Indian states with reliable logistics and temperature-controlled delivery.", gradient: "from-primary to-blue-500" },
@@ -11,11 +10,12 @@ const verticals = [
 ];
 
 const VerticalsSection = () => (
-  <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-    {/* Subtle dot pattern */}
-    <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+  <section className="py-20 md:py-28 relative overflow-hidden">
+    {/* Background image */}
+    <img src={bgVerticals} alt="" className="absolute inset-0 w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-background/90 backdrop-blur-[2px]" />
 
-    <div className="relative container mx-auto px-5 md:px-4">
+    <div className="relative z-10 container mx-auto px-5 md:px-4">
       <div className="grid lg:grid-cols-12 gap-8 md:gap-12">
         {/* Left side */}
         <div className="lg:col-span-3">
@@ -35,22 +35,16 @@ const VerticalsSection = () => (
 
         {/* Right side — zigzag cards */}
         <div className="lg:col-span-9 relative min-h-[600px]">
-          {/* Background image */}
-          <div className="absolute inset-0 rounded-2xl overflow-hidden hidden lg:block">
-            <img src={whyChoosePharma} alt="" className="w-full h-full object-cover opacity-10" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-br from-background/60 via-transparent to-background/60" />
-          </div>
-
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-5">
             {verticals.map((v, i) => (
               <ScrollAnimate key={v.title} delay={i * 120}>
                 <div
-                  className={`group bg-background/90 backdrop-blur-sm rounded-xl border border-border/50 p-6 shadow-sm hover:shadow-card-hover hover:border-primary/20 transition-all duration-500 hover:-translate-y-1 ${
+                  className={`group bg-background/80 backdrop-blur-md rounded-xl border border-border/50 p-6 shadow-sm hover:shadow-card-hover hover:border-primary/20 transition-all duration-500 hover:-translate-y-1 ${
                     i % 2 === 1 ? "md:mt-16" : ""
                   }`}
                 >
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${v.gradient} flex items-center justify-center mb-4 shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300`}>
-                    <v.icon className="h-5 w-5 text-white" />
+                    <v.icon className="h-5 w-5 text-primary-foreground" />
                   </div>
                   <h3 className="text-lg font-heading font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{v.title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{v.desc}</p>
