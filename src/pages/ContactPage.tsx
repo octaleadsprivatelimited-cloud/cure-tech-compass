@@ -7,8 +7,6 @@ import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojkyvvo";
-
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   phone: z.string().trim().min(10, "Enter a valid phone number").max(15),
@@ -19,54 +17,16 @@ const contactSchema = z.object({
 const ContactPage = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
-  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (submitting) return;
-
     const result = contactSchema.safeParse(form);
     if (!result.success) {
       toast({ title: "Validation Error", description: result.error.errors[0].message, variant: "destructive" });
       return;
     }
-
-    setSubmitting(true);
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          phone: form.phone,
-          email: form.email,
-          message: form.message,
-        }),
-      });
-
-      if (!res.ok) {
-        toast({
-          title: "Failed to send",
-          description: "Please try again in a moment, or contact us via phone/WhatsApp.",
-          variant: "destructive",
-        });
-        return;
-      }
-
-      toast({ title: "Message Sent!", description: "We'll get back to you shortly." });
-      setForm({ name: "", phone: "", email: "", message: "" });
-    } catch {
-      toast({
-        title: "Network error",
-        description: "Please check your connection and try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setSubmitting(false);
-    }
+    toast({ title: "Message Sent!", description: "We'll get back to you shortly." });
+    setForm({ name: "", phone: "", email: "", message: "" });
   };
 
   const inputClass = "w-full px-4 py-3 border border-border rounded bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition placeholder:text-muted-foreground";
@@ -77,9 +37,9 @@ const ContactPage = () => {
       <PageHero title="Contact Us" subtitle="Home / Contact Us" />
 
       <section className="py-12 md:py-20">
-        <div className="container mx-auto px-5 md:px-4 grid gap-8 md:gap-12 lg:grid-cols-2 lg:items-start">
+        <div className="container mx-auto px-5 md:px-4 grid lg:grid-cols-5 gap-8 md:gap-12">
           <ScrollAnimate>
-            <div className="space-y-5 md:space-y-6">
+            <div className="lg:col-span-2 space-y-5 md:space-y-6">
               <SectionHeading title="Get In" highlight="Touch" center={false} />
 
               {[
@@ -117,9 +77,9 @@ const ContactPage = () => {
             </div>
           </ScrollAnimate>
 
-          <ScrollAnimate delay={200}>
+          <ScrollAnimate delay={200} className="lg:col-span-3">
             <div className="bg-section-alt p-6 md:p-8 rounded">
-              <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-5 md:mb-6">Send Us a Message</h3>
+              <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mb-5 md:mb-6">Send Us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <input className={inputClass} placeholder="Your Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
@@ -129,10 +89,9 @@ const ContactPage = () => {
                 <textarea className={`${inputClass} resize-none`} rows={5} placeholder="Your Message *" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
                 <button
                   type="submit"
-                  disabled={submitting}
                   className="px-10 py-3 bg-primary text-primary-foreground font-heading font-semibold text-sm rounded hover:bg-primary/90 transition"
                 >
-                  {submitting ? "Sending..." : "Submit"}
+                  Submit
                 </button>
               </form>
             </div>
