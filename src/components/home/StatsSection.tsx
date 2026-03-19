@@ -52,7 +52,7 @@ const StatsSection = () => (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
         {statCards.map((card, idx) => (
           <ScrollAnimate key={card.label} delay={idx * 100}>
-            <div className="group bg-card rounded-2xl p-7 flex flex-col justify-between h-full min-h-[280px] border border-border hover:shadow-elevated hover:border-primary/20 transition-all duration-500 hover:-translate-y-1">
+            <div className="group bg-card rounded-2xl p-4 md:p-7 flex flex-col justify-between h-full min-h-[200px] md:min-h-[280px] border border-border hover:shadow-elevated hover:border-primary/20 transition-all duration-500 hover:-translate-y-1">
               <div className="flex gap-1.5 mb-auto">
                 {card.dots.map((active, i) => (
                   <span key={i} className={`w-2.5 h-2.5 rounded-full transition-colors ${active ? "bg-primary" : "bg-muted"}`} />
