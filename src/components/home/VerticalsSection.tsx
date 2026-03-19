@@ -37,7 +37,7 @@ const VerticalsSection = () => (
             {verticals.map((v, i) => (
               <ScrollAnimate key={v.title} delay={i * 120}>
                 <div
-                  className={`group bg-card rounded-xl border border-border p-6 hover:shadow-elevated hover:border-primary/20 transition-all duration-500 hover:-translate-y-1 ${
+                  className={`group bg-card rounded-xl border border-border p-4 md:p-6 hover:shadow-elevated hover:border-primary/20 transition-all duration-500 hover:-translate-y-1 ${
                     i % 2 === 1 ? "md:mt-16" : ""
                   }`}
                 >

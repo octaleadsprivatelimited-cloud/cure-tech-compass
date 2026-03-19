@@ -54,8 +54,8 @@ const PromiseSection = () => (
               </div>
 
               {/* Bottom description */}
-              <div className="px-7 py-6 border-t border-secondary-foreground/[0.08]">
-                <p className="text-sm text-secondary-foreground/60 leading-relaxed">{p.desc}</p>
+              <div className="px-4 py-4 md:px-7 md:py-6 border-t border-secondary-foreground/[0.08]">
+                <p className="text-xs md:text-sm text-secondary-foreground/60 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           </ScrollAnimate>
