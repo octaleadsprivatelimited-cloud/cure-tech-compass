@@ -60,9 +60,9 @@ const Navbar = () => {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="tel:+919014288588" className="flex items-center gap-1.5 hover:opacity-80">
+            <a href="tel:+919440376180" className="flex items-center gap-1.5 hover:opacity-80">
               <Phone className="h-3 w-3" />
-              +91 9014288588
+              +91 9440376180
             </a>
             <a href="#" className="hover:opacity-80"><Linkedin className="h-3.5 w-3.5" /></a>
           </div>
