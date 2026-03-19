@@ -80,10 +80,24 @@
   .bg-section-alt {
     background-color: hsl(var(--section-alt));
   }
+  .bg-section-dark {
+    background-color: hsl(var(--section-dark));
+  }
+  .text-section-dark {
+    color: hsl(var(--section-dark-fg));
+  }
   .bg-hero-overlay {
     background: linear-gradient(to bottom, hsl(var(--hero-overlay) / 0.3), hsl(var(--hero-overlay) / 0.55));
   }
   .bg-cta-gradient {
     background: var(--cta-gradient);
   }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
 }
