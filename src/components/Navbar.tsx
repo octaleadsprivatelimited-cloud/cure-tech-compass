@@ -147,7 +147,7 @@ const Navbar = () => {
                 ))}
                 <motion.div variants={itemVariants}>
                   <a
-                    href="https://wa.me/919014288588?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20services."
+                    href="https://wa.me/919440376180?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20services."
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}

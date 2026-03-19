@@ -63,7 +63,7 @@ const ContactPage = () => {
               ))}
 
               <a
-                href="https://wa.me/919014288588"
+                href="https://wa.me/919440376180"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-4 bg-accent/10 rounded border border-accent/20 hover:bg-accent/20 transition"
