@@ -1,43 +1,42 @@
 import { Shield, Truck, Users } from "lucide-react";
 import ScrollAnimate from "@/components/ScrollAnimate";
-import bgPromise from "@/assets/bg-promise.jpg";
 
 const pillars = [
   {
     icon: Shield,
     title: "Quality",
     desc: "Our non-compromising approach to quality ensures that we are constantly endeavoring to achieve and maintain the highest quality standards in the pharmaceutical industry in India.",
-    gradient: "from-primary to-blue-600",
   },
   {
     icon: Truck,
     title: "Affordability",
     desc: "Staying true to our founding principles of being a price disruptor, we deliver affordable medication that meets the healthcare needs of communities across India.",
-    gradient: "from-violet-500 to-purple-600",
   },
   {
     icon: Users,
     title: "Accessibility",
     desc: "With our pioneering use of supply chains and distribution setup, we ensure accessibility of quality medicines even in Tier II, Tier III cities and rural markets.",
-    gradient: "from-accent to-emerald-600",
   },
 ];
 
 const PromiseSection = () => (
-  <section className="py-20 md:py-28 relative overflow-hidden">
-    {/* Dark background image */}
-    <img src={bgPromise} alt="" className="absolute inset-0 w-full h-full object-cover" />
-    <div className="absolute inset-0 bg-section-dark/80" />
+  <section className="py-20 md:py-28 bg-secondary relative overflow-hidden">
+    {/* Subtle geometric shapes */}
+    <div className="absolute top-0 left-0 w-full h-full">
+      <div className="absolute top-10 right-10 w-96 h-96 rounded-full border border-primary-foreground/[0.06]" />
+      <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full border border-primary-foreground/[0.06]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/[0.05] blur-[100px]" />
+    </div>
 
     <div className="relative z-10 container mx-auto px-5 md:px-4">
       <ScrollAnimate>
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="text-xs font-heading font-semibold uppercase tracking-[0.2em] text-gradient-accent inline-block">
+          <span className="text-xs font-heading font-semibold uppercase tracking-[0.2em] text-accent inline-block">
             OUR PROMISE
           </span>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-section-dark leading-tight mt-4">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-secondary-foreground leading-tight mt-4">
             Leave no citizen behind in the{" "}
-            <span className="block text-gradient-accent">journey towards a healthier nation.</span>
+            <span className="block text-accent">journey towards a healthier nation.</span>
           </h2>
         </div>
       </ScrollAnimate>
@@ -45,22 +44,18 @@ const PromiseSection = () => (
       <div className="grid md:grid-cols-3 gap-6 md:gap-8">
         {pillars.map((p, i) => (
           <ScrollAnimate key={p.title} delay={i * 150}>
-            <div className="group bg-primary-foreground/5 backdrop-blur-md rounded-2xl overflow-hidden h-full border border-primary-foreground/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/10">
+            <div className="group bg-secondary-foreground/[0.06] backdrop-blur-sm rounded-2xl overflow-hidden h-full border border-secondary-foreground/[0.08] hover:border-accent/30 transition-all duration-500 hover:-translate-y-2">
               {/* Top section with icon */}
-              <div className="relative px-7 pt-8 pb-6 overflow-hidden">
-                <div className="absolute top-3 right-6 w-20 h-20 rounded-full bg-primary-foreground/[0.04] group-hover:scale-150 transition-transform duration-700" />
-
-                <div className="relative z-10">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${p.gradient} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <p.icon className="h-6 w-6 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground">{p.title}</h3>
+              <div className="relative px-7 pt-8 pb-6">
+                <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/30 transition-colors duration-300">
+                  <p.icon className="h-6 w-6 text-accent" />
                 </div>
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-secondary-foreground">{p.title}</h3>
               </div>
 
               {/* Bottom description */}
-              <div className="px-7 py-6 border-t border-primary-foreground/10">
-                <p className="text-sm text-primary-foreground/60 leading-relaxed">{p.desc}</p>
+              <div className="px-7 py-6 border-t border-secondary-foreground/[0.08]">
+                <p className="text-sm text-secondary-foreground/60 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           </ScrollAnimate>
