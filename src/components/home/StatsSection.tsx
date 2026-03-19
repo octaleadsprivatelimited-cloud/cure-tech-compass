@@ -62,7 +62,7 @@ const StatsSection = () => (
                 <p className="text-xs font-heading font-semibold text-muted-foreground uppercase tracking-wider leading-snug mt-6">
                   {card.label}<br />{card.sublabel}
                 </p>
-                <div className="text-5xl md:text-6xl font-heading font-bold text-primary mt-6">
+                <div className="text-3xl md:text-6xl font-heading font-bold text-primary mt-4 md:mt-6">
                   {card.num}
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">{card.desc}</p>
