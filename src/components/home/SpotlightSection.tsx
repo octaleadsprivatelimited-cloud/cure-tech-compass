@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import ScrollAnimate from "@/components/ScrollAnimate";
+import bgSpotlight from "@/assets/bg-spotlight.jpg";
 
 import inspan40 from "@/assets/products/inspan-40.jpg";
 import calcifastXt from "@/assets/products/calcifast-xt.jpg";
 import inspanDsr from "@/assets/products/inspan-dsr.jpg";
 import clavorid625 from "@/assets/products/clavorid-625.jpg";
-import cetriwise10 from "@/assets/products/cetriwise-10.jpg";
 import parasync650 from "@/assets/products/parasync-650.jpg";
 
 const categories = [
@@ -18,10 +18,13 @@ const categories = [
 ];
 
 const SpotlightSection = () => (
-  <section className="py-20 md:py-28 bg-section-alt relative overflow-hidden">
-    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+  <section className="py-20 md:py-28 relative overflow-hidden">
+    {/* Background */}
+    <img src={bgSpotlight} alt="" className="absolute inset-0 w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-background/70 backdrop-blur-[3px]" />
+    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent z-10" />
 
-    <div className="container mx-auto px-5 md:px-4">
+    <div className="relative z-10 container mx-auto px-5 md:px-4">
       <ScrollAnimate>
         <div className="flex items-end justify-between mb-12">
           <div>
@@ -50,7 +53,7 @@ const SpotlightSection = () => (
               to="/products"
               className="group flex-shrink-0 w-[230px] md:w-[250px] snap-start block"
             >
-              <div className={`aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br ${c.color} border border-border/50 mb-3 group-hover:shadow-card-hover group-hover:border-primary/20 transition-all duration-500 group-hover:-translate-y-1`}>
+              <div className={`aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br ${c.color} border border-border/50 mb-3 group-hover:shadow-card-hover group-hover:border-primary/20 transition-all duration-500 group-hover:-translate-y-1 backdrop-blur-sm`}>
                 <img
                   src={c.img}
                   alt={c.name}

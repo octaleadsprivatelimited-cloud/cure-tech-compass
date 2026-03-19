@@ -2,16 +2,20 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import qualityLab from "@/assets/quality-lab.jpg";
+import bgJoin from "@/assets/bg-join.jpg";
 
 const JoinSection = () => (
-  <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-    <div className="container mx-auto px-5 md:px-4">
+  <section className="py-20 md:py-28 relative overflow-hidden">
+    {/* Background */}
+    <img src={bgJoin} alt="" className="absolute inset-0 w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-background/88 backdrop-blur-[2px]" />
+
+    <div className="relative z-10 container mx-auto px-5 md:px-4">
       {/* Purple gradient banner */}
       <ScrollAnimate>
         <div className="bg-gradient-vibrant rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 mb-16 relative overflow-hidden shadow-elevated">
-          {/* Animated glow */}
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-xl" />
-          <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white/5 rounded-full blur-lg" />
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary-foreground/10 rounded-full blur-xl" />
+          <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary-foreground/5 rounded-full blur-lg" />
           <h3 className="relative text-lg md:text-xl font-heading font-bold text-primary-foreground">
             Our Quality, Distribution and<br className="hidden md:block" /> Compliance Strategy
           </h3>
@@ -43,7 +47,7 @@ const JoinSection = () => (
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-gradient-to-br from-accent to-emerald-500 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                    <Check className="h-3 w-3 text-white" />
+                    <Check className="h-3 w-3 text-primary-foreground" />
                   </div>
                   <span className="text-sm text-muted-foreground">{item}</span>
                 </li>
@@ -62,8 +66,7 @@ const JoinSection = () => (
           <div className="rounded-2xl overflow-hidden relative group">
             <img src={qualityLab} alt="Pharmaceutical lab" className="w-full h-64 md:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            {/* Floating stat card */}
-            <div className="absolute bottom-4 left-4 glass rounded-xl px-5 py-3 shadow-elevated border border-white/20">
+            <div className="absolute bottom-4 left-4 glass rounded-xl px-5 py-3 shadow-elevated border border-primary-foreground/20">
               <div className="text-2xl font-heading font-bold text-gradient-primary">1000+</div>
               <div className="text-xs text-muted-foreground">Active Partners</div>
             </div>

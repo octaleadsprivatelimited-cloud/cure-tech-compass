@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import ScrollAnimate from "@/components/ScrollAnimate";
 import qualityLab from "@/assets/quality-lab.jpg";
+import bgStats from "@/assets/bg-stats.jpg";
 
 const statCards = [
   { dots: [false, false, true], label: "DISTRIBUTION", sublabel: "EXCELLENCE", num: "500+", desc: "Products Distributed" },
@@ -9,11 +10,12 @@ const statCards = [
 ];
 
 const StatsSection = () => (
-  <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-    {/* Subtle background pattern */}
-    <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+  <section className="py-20 md:py-28 relative overflow-hidden">
+    {/* Background image with overlay */}
+    <img src={bgStats} alt="" className="absolute inset-0 w-full h-full object-cover" />
+    <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
 
-    <div className="relative container mx-auto px-5 md:px-4">
+    <div className="relative z-10 container mx-auto px-5 md:px-4">
       {/* Top heading */}
       <div className="flex items-start justify-between mb-14">
         <ScrollAnimate>
@@ -51,7 +53,7 @@ const StatsSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
         {statCards.map((card, idx) => (
           <ScrollAnimate key={card.label} delay={idx * 100}>
-            <div className="group bg-gradient-card rounded-2xl p-7 flex flex-col justify-between h-full min-h-[280px] border border-border/50 hover:shadow-card-hover hover:border-primary/20 transition-all duration-500 hover:-translate-y-1">
+            <div className="group bg-background/80 backdrop-blur-md rounded-2xl p-7 flex flex-col justify-between h-full min-h-[280px] border border-border/50 hover:shadow-card-hover hover:border-primary/20 transition-all duration-500 hover:-translate-y-1">
               <div className="flex gap-1.5 mb-auto">
                 {card.dots.map((active, i) => (
                   <span key={i} className={`w-2.5 h-2.5 rounded-full transition-colors ${active ? "bg-primary glow-primary" : "bg-primary/15"}`} />
@@ -81,9 +83,8 @@ const StatsSection = () => (
         {/* Highlight Card */}
         <ScrollAnimate delay={300}>
           <div className="bg-gradient-vibrant rounded-2xl p-7 flex flex-col justify-between h-full min-h-[280px] text-primary-foreground relative overflow-hidden group">
-            {/* Animated orb */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/10 blur-xl group-hover:scale-150 transition-transform duration-700" />
-            <div className="absolute bottom-0 left-0 w-24 h-24 rounded-full bg-white/5 blur-lg" />
+            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-primary-foreground/10 blur-xl group-hover:scale-150 transition-transform duration-700" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 rounded-full bg-primary-foreground/5 blur-lg" />
             <span className="relative text-xs font-heading font-semibold uppercase tracking-wider opacity-70">
               KEY<br />HIGHLIGHTS
             </span>
