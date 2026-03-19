@@ -41,21 +41,21 @@ const PromiseSection = () => (
         </div>
       </ScrollAnimate>
 
-      <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
         {pillars.map((p, i) => (
           <ScrollAnimate key={p.title} delay={i * 150}>
             <div className="group bg-secondary-foreground/[0.06] backdrop-blur-sm rounded-2xl overflow-hidden h-full border border-secondary-foreground/[0.08] hover:border-accent/30 transition-all duration-500 hover:-translate-y-2">
               {/* Top section with icon */}
-              <div className="relative px-7 pt-8 pb-6">
-                <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent/30 transition-colors duration-300">
-                  <p.icon className="h-6 w-6 text-accent" />
+              <div className="relative px-4 pt-5 pb-4 md:px-7 md:pt-8 md:pb-6">
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-3 md:mb-5 group-hover:bg-accent/30 transition-colors duration-300">
+                  <p.icon className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-secondary-foreground">{p.title}</h3>
+                <h3 className="text-lg md:text-3xl font-heading font-bold text-secondary-foreground">{p.title}</h3>
               </div>
 
               {/* Bottom description */}
-              <div className="px-7 py-6 border-t border-secondary-foreground/[0.08]">
-                <p className="text-sm text-secondary-foreground/60 leading-relaxed">{p.desc}</p>
+              <div className="px-4 py-4 md:px-7 md:py-6 border-t border-secondary-foreground/[0.08]">
+                <p className="text-xs md:text-sm text-secondary-foreground/60 leading-relaxed">{p.desc}</p>
               </div>
             </div>
           </ScrollAnimate>
