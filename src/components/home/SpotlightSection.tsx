@@ -2,18 +2,36 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import ScrollAnimate from "@/components/ScrollAnimate";
 
-import inspan40 from "@/assets/products/inspan-40.jpg";
-import calcifastXt from "@/assets/products/calcifast-xt.jpg";
-import inspanDsr from "@/assets/products/inspan-dsr.jpg";
-import clavorid625 from "@/assets/products/clavorid-625.jpg";
-import parasync650 from "@/assets/products/parasync-650.jpg";
+import catRespules from "@/assets/products/cat-respules.jpg";
+import catTablets from "@/assets/products/cat-tablets.jpg";
+import catCardiac from "@/assets/products/cat-cardiac.jpg";
+import catInjectable from "@/assets/products/cat-injectable.jpg";
+import catCapsules from "@/assets/products/cat-capsules.jpg";
+import catSyrup from "@/assets/products/cat-syrup.jpg";
+import catDrysyrup from "@/assets/products/cat-drysyrup.jpg";
+import catDermaOintment from "@/assets/products/cat-derma-ointment.jpg";
+import catDermaLotion from "@/assets/products/cat-derma-lotion.jpg";
+import catDermaSoap from "@/assets/products/cat-derma-soap.jpg";
+import catDental from "@/assets/products/cat-dental.jpg";
+import catProtein from "@/assets/products/cat-protein.jpg";
+import catEyeear from "@/assets/products/cat-eyeear.jpg";
+import catAyurvedic from "@/assets/products/cat-ayurvedic.jpg";
 
 const categories = [
-  { name: "INSPAN-40", desc: "Pantoprazole 40mg", tag: "GASTROINTESTINAL", img: inspan40 },
-  { name: "PARASYNC-650", desc: "Paracetamol 650mg", tag: "PAIN RELIEF", img: parasync650 },
-  { name: "CALCIFAST-XT", desc: "Calcium + Vitamin D3", tag: "SUPPLEMENTS", img: calcifastXt },
-  { name: "INSPAN-DSR", desc: "Pantoprazole + Domperidone SR", tag: "GASTROINTESTINAL", img: inspanDsr },
-  { name: "CLAVORID-625", desc: "Amoxycillin + Clavulanic Acid", tag: "ANTIBIOTICS", img: clavorid625 },
+  { name: "Respules", desc: "For Inhalation", tag: "RESPIRATORY", img: catRespules },
+  { name: "Tablets", desc: "Oral Solid Dosage", tag: "ORAL", img: catTablets },
+  { name: "Cardiac Diabetic", desc: "Heart & Diabetes Care", tag: "SPECIALTY", img: catCardiac },
+  { name: "Injectable", desc: "Vials & Ampoules", tag: "PARENTERAL", img: catInjectable },
+  { name: "Capsules / Softgels", desc: "Oral Capsule Range", tag: "ORAL", img: catCapsules },
+  { name: "Syrup / Liquids", desc: "Oral Liquid Formulations", tag: "ORAL", img: catSyrup },
+  { name: "Dry Syrups / Drops", desc: "Pediatric & Adult Powders", tag: "PEDIATRIC", img: catDrysyrup },
+  { name: "Derma – Ointments", desc: "Ointments / Creams / Gels", tag: "DERMA", img: catDermaOintment },
+  { name: "Derma – Lotions", desc: "Lotions / Powders / Serum", tag: "DERMA", img: catDermaLotion },
+  { name: "Derma – Soaps", desc: "Soaps / Shampoos / Face Wash", tag: "DERMA", img: catDermaSoap },
+  { name: "Dental Products", desc: "Oral Care Range", tag: "DENTAL", img: catDental },
+  { name: "Protein / Sachets", desc: "Nutritional Supplements", tag: "NUTRACEUTICALS", img: catProtein },
+  { name: "Eye / Ear / Nasal", desc: "Drops & Sprays", tag: "ENT / OPHTHAL", img: catEyeear },
+  { name: "Ayurvedic", desc: "Syrup / Caps / Tonic / Churna", tag: "AYURVEDIC", img: catAyurvedic },
 ];
 
 const SpotlightSection = () => (
@@ -25,7 +43,7 @@ const SpotlightSection = () => (
         <div className="flex items-end justify-between mb-12">
           <div>
             <span className="text-xs font-heading font-semibold uppercase tracking-[0.2em] text-accent inline-block">
-              PRODUCT SPOTLIGHT
+              PRODUCT CATEGORIES
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight mt-2">
               Committed to Creating Value<br />
@@ -41,27 +59,27 @@ const SpotlightSection = () => (
         </div>
       </ScrollAnimate>
 
-      {/* Horizontal scroll cards */}
-      <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none -mx-5 px-5 md:mx-0 md:px-0">
+      {/* Grid of category cards */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-5">
         {categories.map((c, i) => (
-          <ScrollAnimate key={c.name} delay={i * 80}>
+          <ScrollAnimate key={c.name} delay={i * 50}>
             <Link
               to="/products"
-              className="group flex-shrink-0 w-[230px] md:w-[250px] snap-start block"
+              className="group block"
             >
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted border border-border mb-3 group-hover:shadow-elevated group-hover:border-primary/20 transition-all duration-500 group-hover:-translate-y-1">
+              <div className="aspect-square rounded-2xl overflow-hidden bg-muted border border-border mb-3 group-hover:shadow-elevated group-hover:border-primary/20 transition-all duration-500 group-hover:-translate-y-1">
                 <img
                   src={c.img}
                   alt={c.name}
-                  className="w-full h-full object-contain p-5 group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <span className="text-[10px] font-heading font-semibold uppercase tracking-wider text-accent inline-block">
+              <span className="text-[9px] md:text-[10px] font-heading font-semibold uppercase tracking-wider text-accent inline-block">
                 {c.tag}
               </span>
-              <h3 className="text-sm font-heading font-bold text-foreground mt-1 group-hover:text-primary transition-colors">{c.name}</h3>
-              <p className="text-xs text-muted-foreground mt-0.5">{c.desc}</p>
+              <h3 className="text-xs md:text-sm font-heading font-bold text-foreground mt-0.5 group-hover:text-primary transition-colors leading-tight">{c.name}</h3>
+              <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 leading-tight">{c.desc}</p>
             </Link>
           </ScrollAnimate>
         ))}
