@@ -42,6 +42,8 @@
     --nav-bg: 0 0% 100%;
     --hero-overlay: 220 80% 15%;
     --section-alt: 220 20% 97%;
+    --section-dark: 220 30% 12%;
+    --section-dark-fg: 0 0% 100%;
     --cta-gradient: linear-gradient(135deg, hsl(220 80% 40%), hsl(220 80% 30%));
 
     --sidebar-background: 0 0% 98%;
