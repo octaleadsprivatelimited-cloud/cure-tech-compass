@@ -33,7 +33,7 @@ const VerticalsSection = () => (
 
         {/* Right side — zigzag cards */}
         <div className="lg:col-span-9">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-2 gap-3 md:gap-5">
             {verticals.map((v, i) => (
               <ScrollAnimate key={v.title} delay={i * 120}>
                 <div

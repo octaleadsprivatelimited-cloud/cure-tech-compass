@@ -41,7 +41,7 @@ const PromiseSection = () => (
         </div>
       </ScrollAnimate>
 
-      <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
         {pillars.map((p, i) => (
           <ScrollAnimate key={p.title} delay={i * 150}>
             <div className="group bg-secondary-foreground/[0.06] backdrop-blur-sm rounded-2xl overflow-hidden h-full border border-secondary-foreground/[0.08] hover:border-accent/30 transition-all duration-500 hover:-translate-y-2">

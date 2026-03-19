@@ -49,7 +49,7 @@ const StatsSection = () => (
       </div>
 
       {/* Cards grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
         {statCards.map((card, idx) => (
           <ScrollAnimate key={card.label} delay={idx * 100}>
             <div className="group bg-card rounded-2xl p-7 flex flex-col justify-between h-full min-h-[280px] border border-border hover:shadow-elevated hover:border-primary/20 transition-all duration-500 hover:-translate-y-1">
