@@ -3,9 +3,9 @@ import HeroSection from "@/components/home/HeroSection";
 import StatsSection from "@/components/home/StatsSection";
 import AboutSection from "@/components/home/AboutSection";
 import PromiseSection from "@/components/home/PromiseSection";
-import ProductsSection from "@/components/home/ProductsSection";
-import ServicesSection from "@/components/home/ServicesSection";
-import WhyChooseSection from "@/components/home/WhyChooseSection";
+import VerticalsSection from "@/components/home/VerticalsSection";
+import SpotlightSection from "@/components/home/SpotlightSection";
+import JoinSection from "@/components/home/JoinSection";
 import CTASection from "@/components/home/CTASection";
 
 const HomePage = () => (
@@ -15,9 +15,9 @@ const HomePage = () => (
     <StatsSection />
     <AboutSection />
     <PromiseSection />
-    <ProductsSection />
-    <ServicesSection />
-    <WhyChooseSection />
+    <VerticalsSection />
+    <SpotlightSection />
+    <JoinSection />
     <CTASection />
   </main>
 );
