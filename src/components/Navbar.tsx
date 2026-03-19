@@ -60,9 +60,9 @@ const Navbar = () => {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="tel:+919014288588" className="flex items-center gap-1.5 hover:opacity-80">
+            <a href="tel:+919440376180" className="flex items-center gap-1.5 hover:opacity-80">
               <Phone className="h-3 w-3" />
-              +91 9014288588
+              +91 9440376180
             </a>
             <a href="#" className="hover:opacity-80"><Linkedin className="h-3.5 w-3.5" /></a>
           </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="https://wa.me/919014288588?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20services."
+              href="https://wa.me/919440376180?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4 px-6 py-2.5 text-[13px] font-heading font-semibold tracking-wide bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors"
@@ -147,7 +147,7 @@ const Navbar = () => {
                 ))}
                 <motion.div variants={itemVariants}>
                   <a
-                    href="https://wa.me/919014288588?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20services."
+                    href="https://wa.me/919440376180?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products%20and%20services."
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}

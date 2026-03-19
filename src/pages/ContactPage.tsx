@@ -33,7 +33,7 @@ const ContactPage = () => {
 
   return (
     <main>
-      <PageSEO title="Contact Us" description="Get in touch with Cure Tech Pharma for wholesale pharmaceutical inquiries, distribution partnerships, and product information. Call +91 9014288588." path="/contact" />
+      <PageSEO title="Contact Us" description="Get in touch with Cure Tech Pharma for wholesale pharmaceutical inquiries, distribution partnerships, and product information. Call +91 9440376180." path="/contact" />
       <PageHero title="Contact Us" subtitle="Home / Contact Us" />
 
       <section className="py-12 md:py-20">
@@ -43,7 +43,7 @@ const ContactPage = () => {
               <SectionHeading title="Get In" highlight="Touch" center={false} />
 
               {[
-                { icon: Phone, label: "Phone / WhatsApp", value: "+91 9014288588", href: "tel:+919014288588" },
+                { icon: Phone, label: "Phone / WhatsApp", value: "+91 9440376180", href: "tel:+919440376180" },
                 { icon: Mail, label: "Email", value: "info@curetechpharma.in", href: "mailto:info@curetechpharma.in" },
                 { icon: MapPin, label: "Address", value: "H.No: 7-1-211/32, 3rd Floor, D.K Road, Ameerpet, Opp. Sonubhai Ammavari Temple, Hyderabad – 500016" },
               ].map((item) => (
@@ -63,7 +63,7 @@ const ContactPage = () => {
               ))}
 
               <a
-                href="https://wa.me/919014288588"
+                href="https://wa.me/919440376180"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-4 bg-accent/10 rounded border border-accent/20 hover:bg-accent/20 transition"

@@ -49,7 +49,7 @@ const Footer = () => (
               </a>
             ))}
             <a
-              href="https://wa.me/919014288588?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
+              href="https://wa.me/919440376180?text=Hello%20Cure%20Tech%20Pharma%2C%20I%20would%20like%20to%20inquire%20about%20your%20products."
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded bg-primary-foreground/10 flex items-center justify-center hover:bg-[#25D366] transition-colors"
@@ -86,7 +86,7 @@ const Footer = () => (
           <ul className="space-y-3 text-sm opacity-75">
             <li className="flex items-start gap-2.5">
               <Phone className="h-4 w-4 mt-0.5 shrink-0" />
-              <a href="tel:+919014288588">+91 9014288588</a>
+              <a href="tel:+919440376180">+91 9440376180</a>
             </li>
             <li className="flex items-start gap-2.5">
               <Mail className="h-4 w-4 mt-0.5 shrink-0" />

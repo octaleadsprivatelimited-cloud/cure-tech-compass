@@ -148,7 +148,7 @@ const ProductsPage = () => {
                       />
                       <div className="absolute inset-0 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-secondary/60 to-transparent">
                         <a
-                          href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
+                          href={`https://wa.me/919440376180?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="px-5 py-2 text-xs font-heading font-semibold bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-colors"
@@ -164,7 +164,7 @@ const ProductsPage = () => {
                       </h4>
                       <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 leading-tight">{p.desc}</p>
                       <a
-                        href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
+                        href={`https://wa.me/919440376180?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="md:hidden inline-block mt-2.5 px-4 py-1.5 text-[10px] font-heading font-semibold bg-primary text-primary-foreground rounded-full"
@@ -199,7 +199,7 @@ const ProductsPage = () => {
                       <p className="text-xs text-muted-foreground mt-0.5">{p.desc}</p>
                     </div>
                     <a
-                      href={`https://wa.me/919014288588?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
+                      href={`https://wa.me/919440376180?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(p.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="shrink-0 px-4 py-2 text-xs font-heading font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
