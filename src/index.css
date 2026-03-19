@@ -101,3 +101,11 @@
 .animate-scroll-bounce {
   animation: scroll-bounce 2s ease-in-out infinite;
 }
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
